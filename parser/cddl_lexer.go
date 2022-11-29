@@ -50,13 +50,13 @@ func cddllexerLexerInit() {
 	}
 	staticData.symbolicNames = []string{
 		"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-		"", "", "", "", "TAG1", "TAG2", "RANGEOP", "CTLOP", "OCCUR", "VALUE",
+		"", "", "", "", "TAG", "MAJOR", "RANGEOP", "CTLOP", "OCCUR", "VALUE",
 		"ID", "S",
 	}
 	staticData.ruleNames = []string{
 		"T__0", "T__1", "T__2", "T__3", "T__4", "T__5", "T__6", "T__7", "T__8",
 		"T__9", "T__10", "T__11", "T__12", "T__13", "T__14", "T__15", "T__16",
-		"T__17", "T__18", "T__19", "TAG1", "TAG2", "RANGEOP", "CTLOP", "OCCUR",
+		"T__17", "T__18", "T__19", "TAG", "MAJOR", "RANGEOP", "CTLOP", "OCCUR",
 		"UINT", "VALUE", "INT", "NUMBER", "HEXFLOAT", "FRACTION", "EXPONENT",
 		"TEXT", "SCHAR", "SESC", "BYTES", "BCHAR", "BSQUAL", "ID", "ALPHA",
 		"EALPHA", "DIGIT", "DIGIT1", "HEXDIG", "BINDIG", "S", "WS", "SP", "NL",
@@ -292,8 +292,8 @@ const (
 	CDDLLexerT__17   = 18
 	CDDLLexerT__18   = 19
 	CDDLLexerT__19   = 20
-	CDDLLexerTAG1    = 21
-	CDDLLexerTAG2    = 22
+	CDDLLexerTAG     = 21
+	CDDLLexerMAJOR   = 22
 	CDDLLexerRANGEOP = 23
 	CDDLLexerCTLOP   = 24
 	CDDLLexerOCCUR   = 25

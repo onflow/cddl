@@ -38,12 +38,12 @@ func cddlParserInit() {
 	}
 	staticData.symbolicNames = []string{
 		"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-		"", "", "", "", "TAG1", "TAG2", "RANGEOP", "CTLOP", "OCCUR", "VALUE",
+		"", "", "", "", "TAG", "MAJOR", "RANGEOP", "CTLOP", "OCCUR", "VALUE",
 		"ID", "S",
 	}
 	staticData.ruleNames = []string{
 		"cddl", "rule", "typeRule", "groupRule", "assignType", "assignGroup",
-		"genericParam", "genericArg", "type", "type1", "type2", "group", "groupChoice",
+		"genericParam", "genericArg", "type", "type1", "type2", "groups", "groupChoice",
 		"groupEntry", "memberKey", "optComma",
 	}
 	staticData.predictionContextCache = antlr.NewPredictionContextCache()
@@ -74,13 +74,13 @@ func cddlParserInit() {
 		10, 3, 10, 226, 8, 10, 1, 10, 1, 10, 1, 10, 1, 10, 3, 10, 232, 8, 10, 1,
 		11, 1, 11, 3, 11, 236, 8, 11, 1, 11, 1, 11, 3, 11, 240, 8, 11, 1, 11, 5,
 		11, 243, 8, 11, 10, 11, 12, 11, 246, 9, 11, 1, 12, 1, 12, 1, 12, 5, 12,
-		251, 8, 12, 10, 12, 12, 12, 254, 9, 12, 1, 13, 1, 13, 3, 13, 258, 8, 13,
-		3, 13, 260, 8, 13, 1, 13, 1, 13, 3, 13, 264, 8, 13, 3, 13, 266, 8, 13,
-		1, 13, 1, 13, 1, 13, 3, 13, 271, 8, 13, 3, 13, 273, 8, 13, 1, 13, 1, 13,
-		3, 13, 277, 8, 13, 1, 13, 1, 13, 3, 13, 281, 8, 13, 3, 13, 283, 8, 13,
+		251, 8, 12, 10, 12, 12, 12, 254, 9, 12, 1, 13, 3, 13, 257, 8, 13, 1, 13,
+		3, 13, 260, 8, 13, 1, 13, 3, 13, 263, 8, 13, 1, 13, 3, 13, 266, 8, 13,
+		1, 13, 1, 13, 3, 13, 270, 8, 13, 1, 13, 3, 13, 273, 8, 13, 1, 13, 1, 13,
+		3, 13, 277, 8, 13, 1, 13, 3, 13, 280, 8, 13, 1, 13, 3, 13, 283, 8, 13,
 		1, 13, 1, 13, 3, 13, 287, 8, 13, 1, 13, 1, 13, 3, 13, 291, 8, 13, 1, 13,
-		1, 13, 3, 13, 295, 8, 13, 1, 14, 1, 14, 3, 14, 299, 8, 14, 1, 14, 1, 14,
-		3, 14, 303, 8, 14, 3, 14, 305, 8, 14, 1, 14, 1, 14, 1, 14, 1, 14, 3, 14,
+		1, 13, 3, 13, 295, 8, 13, 1, 14, 1, 14, 3, 14, 299, 8, 14, 1, 14, 3, 14,
+		302, 8, 14, 1, 14, 3, 14, 305, 8, 14, 1, 14, 1, 14, 1, 14, 1, 14, 3, 14,
 		311, 8, 14, 1, 14, 1, 14, 1, 14, 3, 14, 316, 8, 14, 1, 14, 3, 14, 319,
 		8, 14, 1, 15, 3, 15, 322, 8, 15, 1, 15, 3, 15, 325, 8, 15, 1, 15, 3, 15,
 		328, 8, 15, 1, 15, 0, 0, 16, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22,
@@ -174,29 +174,29 @@ func cddlParserInit() {
 		3, 26, 13, 0, 248, 249, 3, 30, 15, 0, 249, 251, 1, 0, 0, 0, 250, 247, 1,
 		0, 0, 0, 251, 254, 1, 0, 0, 0, 252, 250, 1, 0, 0, 0, 252, 253, 1, 0, 0,
 		0, 253, 25, 1, 0, 0, 0, 254, 252, 1, 0, 0, 0, 255, 257, 5, 25, 0, 0, 256,
-		258, 5, 28, 0, 0, 257, 256, 1, 0, 0, 0, 257, 258, 1, 0, 0, 0, 258, 260,
-		1, 0, 0, 0, 259, 255, 1, 0, 0, 0, 259, 260, 1, 0, 0, 0, 260, 265, 1, 0,
-		0, 0, 261, 263, 3, 28, 14, 0, 262, 264, 5, 28, 0, 0, 263, 262, 1, 0, 0,
-		0, 263, 264, 1, 0, 0, 0, 264, 266, 1, 0, 0, 0, 265, 261, 1, 0, 0, 0, 265,
+		255, 1, 0, 0, 0, 256, 257, 1, 0, 0, 0, 257, 259, 1, 0, 0, 0, 258, 260,
+		5, 28, 0, 0, 259, 258, 1, 0, 0, 0, 259, 260, 1, 0, 0, 0, 260, 262, 1, 0,
+		0, 0, 261, 263, 3, 28, 14, 0, 262, 261, 1, 0, 0, 0, 262, 263, 1, 0, 0,
+		0, 263, 265, 1, 0, 0, 0, 264, 266, 5, 28, 0, 0, 265, 264, 1, 0, 0, 0, 265,
 		266, 1, 0, 0, 0, 266, 267, 1, 0, 0, 0, 267, 295, 3, 16, 8, 0, 268, 270,
-		5, 25, 0, 0, 269, 271, 5, 28, 0, 0, 270, 269, 1, 0, 0, 0, 270, 271, 1,
-		0, 0, 0, 271, 273, 1, 0, 0, 0, 272, 268, 1, 0, 0, 0, 272, 273, 1, 0, 0,
-		0, 273, 274, 1, 0, 0, 0, 274, 276, 5, 27, 0, 0, 275, 277, 3, 14, 7, 0,
-		276, 275, 1, 0, 0, 0, 276, 277, 1, 0, 0, 0, 277, 295, 1, 0, 0, 0, 278,
-		280, 5, 25, 0, 0, 279, 281, 5, 28, 0, 0, 280, 279, 1, 0, 0, 0, 280, 281,
-		1, 0, 0, 0, 281, 283, 1, 0, 0, 0, 282, 278, 1, 0, 0, 0, 282, 283, 1, 0,
-		0, 0, 283, 284, 1, 0, 0, 0, 284, 286, 5, 8, 0, 0, 285, 287, 5, 28, 0, 0,
-		286, 285, 1, 0, 0, 0, 286, 287, 1, 0, 0, 0, 287, 288, 1, 0, 0, 0, 288,
-		290, 3, 22, 11, 0, 289, 291, 5, 28, 0, 0, 290, 289, 1, 0, 0, 0, 290, 291,
-		1, 0, 0, 0, 291, 292, 1, 0, 0, 0, 292, 293, 5, 9, 0, 0, 293, 295, 1, 0,
-		0, 0, 294, 259, 1, 0, 0, 0, 294, 272, 1, 0, 0, 0, 294, 282, 1, 0, 0, 0,
-		295, 27, 1, 0, 0, 0, 296, 298, 3, 18, 9, 0, 297, 299, 5, 28, 0, 0, 298,
-		297, 1, 0, 0, 0, 298, 299, 1, 0, 0, 0, 299, 304, 1, 0, 0, 0, 300, 302,
-		5, 18, 0, 0, 301, 303, 5, 28, 0, 0, 302, 301, 1, 0, 0, 0, 302, 303, 1,
-		0, 0, 0, 303, 305, 1, 0, 0, 0, 304, 300, 1, 0, 0, 0, 304, 305, 1, 0, 0,
-		0, 305, 306, 1, 0, 0, 0, 306, 307, 5, 19, 0, 0, 307, 319, 1, 0, 0, 0, 308,
-		310, 5, 27, 0, 0, 309, 311, 5, 28, 0, 0, 310, 309, 1, 0, 0, 0, 310, 311,
-		1, 0, 0, 0, 311, 312, 1, 0, 0, 0, 312, 319, 5, 20, 0, 0, 313, 315, 5, 26,
+		5, 25, 0, 0, 269, 268, 1, 0, 0, 0, 269, 270, 1, 0, 0, 0, 270, 272, 1, 0,
+		0, 0, 271, 273, 5, 28, 0, 0, 272, 271, 1, 0, 0, 0, 272, 273, 1, 0, 0, 0,
+		273, 274, 1, 0, 0, 0, 274, 276, 5, 27, 0, 0, 275, 277, 3, 14, 7, 0, 276,
+		275, 1, 0, 0, 0, 276, 277, 1, 0, 0, 0, 277, 295, 1, 0, 0, 0, 278, 280,
+		5, 25, 0, 0, 279, 278, 1, 0, 0, 0, 279, 280, 1, 0, 0, 0, 280, 282, 1, 0,
+		0, 0, 281, 283, 5, 28, 0, 0, 282, 281, 1, 0, 0, 0, 282, 283, 1, 0, 0, 0,
+		283, 284, 1, 0, 0, 0, 284, 286, 5, 8, 0, 0, 285, 287, 5, 28, 0, 0, 286,
+		285, 1, 0, 0, 0, 286, 287, 1, 0, 0, 0, 287, 288, 1, 0, 0, 0, 288, 290,
+		3, 22, 11, 0, 289, 291, 5, 28, 0, 0, 290, 289, 1, 0, 0, 0, 290, 291, 1,
+		0, 0, 0, 291, 292, 1, 0, 0, 0, 292, 293, 5, 9, 0, 0, 293, 295, 1, 0, 0,
+		0, 294, 256, 1, 0, 0, 0, 294, 269, 1, 0, 0, 0, 294, 279, 1, 0, 0, 0, 295,
+		27, 1, 0, 0, 0, 296, 298, 3, 18, 9, 0, 297, 299, 5, 28, 0, 0, 298, 297,
+		1, 0, 0, 0, 298, 299, 1, 0, 0, 0, 299, 301, 1, 0, 0, 0, 300, 302, 5, 18,
+		0, 0, 301, 300, 1, 0, 0, 0, 301, 302, 1, 0, 0, 0, 302, 304, 1, 0, 0, 0,
+		303, 305, 5, 28, 0, 0, 304, 303, 1, 0, 0, 0, 304, 305, 1, 0, 0, 0, 305,
+		306, 1, 0, 0, 0, 306, 307, 5, 19, 0, 0, 307, 319, 1, 0, 0, 0, 308, 310,
+		5, 27, 0, 0, 309, 311, 5, 28, 0, 0, 310, 309, 1, 0, 0, 0, 310, 311, 1,
+		0, 0, 0, 311, 312, 1, 0, 0, 0, 312, 319, 5, 20, 0, 0, 313, 315, 5, 26,
 		0, 0, 314, 316, 5, 28, 0, 0, 315, 314, 1, 0, 0, 0, 315, 316, 1, 0, 0, 0,
 		316, 317, 1, 0, 0, 0, 317, 319, 5, 20, 0, 0, 318, 296, 1, 0, 0, 0, 318,
 		308, 1, 0, 0, 0, 318, 313, 1, 0, 0, 0, 319, 29, 1, 0, 0, 0, 320, 322, 5,
@@ -206,8 +206,8 @@ func cddlParserInit() {
 		1, 0, 0, 0, 328, 31, 1, 0, 0, 0, 69, 33, 37, 41, 44, 50, 54, 57, 61, 67,
 		70, 74, 84, 88, 92, 96, 100, 107, 111, 115, 119, 123, 130, 134, 139, 144,
 		148, 151, 156, 160, 164, 170, 174, 180, 184, 190, 194, 198, 202, 206, 212,
-		216, 221, 225, 231, 235, 239, 244, 252, 257, 259, 263, 265, 270, 272, 276,
-		280, 282, 286, 290, 294, 298, 302, 304, 310, 315, 318, 321, 324, 327,
+		216, 221, 225, 231, 235, 239, 244, 252, 256, 259, 262, 265, 269, 272, 276,
+		279, 282, 286, 290, 294, 298, 301, 304, 310, 315, 318, 321, 324, 327,
 	}
 	deserializer := antlr.NewATNDeserializer(nil)
 	staticData.atn = deserializer.Deserialize(staticData.serializedATN)
@@ -266,8 +266,8 @@ const (
 	CDDLParserT__17   = 18
 	CDDLParserT__18   = 19
 	CDDLParserT__19   = 20
-	CDDLParserTAG1    = 21
-	CDDLParserTAG2    = 22
+	CDDLParserTAG     = 21
+	CDDLParserMAJOR   = 22
 	CDDLParserRANGEOP = 23
 	CDDLParserCTLOP   = 24
 	CDDLParserOCCUR   = 25
@@ -289,7 +289,7 @@ const (
 	CDDLParserRULE_type         = 8
 	CDDLParserRULE_type1        = 9
 	CDDLParserRULE_type2        = 10
-	CDDLParserRULE_group        = 11
+	CDDLParserRULE_groups       = 11
 	CDDLParserRULE_groupChoice  = 12
 	CDDLParserRULE_groupEntry   = 13
 	CDDLParserRULE_memberKey    = 14
@@ -393,18 +393,6 @@ func (s *CddlContext) GetRuleContext() antlr.RuleContext {
 
 func (s *CddlContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *CddlContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.EnterCddl(s)
-	}
-}
-
-func (s *CddlContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.ExitCddl(s)
-	}
 }
 
 func (p *CDDLParser) Cddl() (localctx ICddlContext) {
@@ -564,18 +552,6 @@ func (s *RuleContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) s
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *RuleContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.EnterRule(s)
-	}
-}
-
-func (s *RuleContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.ExitRule(s)
-	}
-}
-
 func (p *CDDLParser) Rule_() (localctx IRuleContext) {
 	this := p
 	_ = this
@@ -725,18 +701,6 @@ func (s *TypeRuleContext) GetRuleContext() antlr.RuleContext {
 
 func (s *TypeRuleContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *TypeRuleContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.EnterTypeRule(s)
-	}
-}
-
-func (s *TypeRuleContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.ExitTypeRule(s)
-	}
 }
 
 func (p *CDDLParser) TypeRule() (localctx ITypeRuleContext) {
@@ -919,18 +883,6 @@ func (s *GroupRuleContext) ToStringTree(ruleNames []string, recog antlr.Recogniz
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *GroupRuleContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.EnterGroupRule(s)
-	}
-}
-
-func (s *GroupRuleContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.ExitGroupRule(s)
-	}
-}
-
 func (p *CDDLParser) GroupRule() (localctx IGroupRuleContext) {
 	this := p
 	_ = this
@@ -988,9 +940,8 @@ func (p *CDDLParser) GroupRule() (localctx IGroupRuleContext) {
 	}
 	p.SetState(74)
 	p.GetErrorHandler().Sync(p)
-	_la = p.GetTokenStream().LA(1)
 
-	if _la == CDDLParserS {
+	if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 10, p.GetParserRuleContext()) == 1 {
 		{
 			p.SetState(73)
 			p.Match(CDDLParserS)
@@ -1048,18 +999,6 @@ func (s *AssignTypeContext) GetRuleContext() antlr.RuleContext {
 
 func (s *AssignTypeContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *AssignTypeContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.EnterAssignType(s)
-	}
-}
-
-func (s *AssignTypeContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.ExitAssignType(s)
-	}
 }
 
 func (p *CDDLParser) AssignType() (localctx IAssignTypeContext) {
@@ -1145,18 +1084,6 @@ func (s *AssignGroupContext) GetRuleContext() antlr.RuleContext {
 
 func (s *AssignGroupContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *AssignGroupContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.EnterAssignGroup(s)
-	}
-}
-
-func (s *AssignGroupContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.ExitAssignGroup(s)
-	}
 }
 
 func (p *CDDLParser) AssignGroup() (localctx IAssignGroupContext) {
@@ -1259,18 +1186,6 @@ func (s *GenericParamContext) GetRuleContext() antlr.RuleContext {
 
 func (s *GenericParamContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *GenericParamContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.EnterGenericParam(s)
-	}
-}
-
-func (s *GenericParamContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.ExitGenericParam(s)
-	}
 }
 
 func (p *CDDLParser) GenericParam() (localctx IGenericParamContext) {
@@ -1471,18 +1386,6 @@ func (s *GenericArgContext) ToStringTree(ruleNames []string, recog antlr.Recogni
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *GenericArgContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.EnterGenericArg(s)
-	}
-}
-
-func (s *GenericArgContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.ExitGenericArg(s)
-	}
-}
-
 func (p *CDDLParser) GenericArg() (localctx IGenericArgContext) {
 	this := p
 	_ = this
@@ -1681,18 +1584,6 @@ func (s *TypeContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) s
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *TypeContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.EnterType(s)
-	}
-}
-
-func (s *TypeContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.ExitType(s)
-	}
-}
-
 func (p *CDDLParser) Type_() (localctx ITypeContext) {
 	this := p
 	_ = this
@@ -1873,18 +1764,6 @@ func (s *Type1Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) 
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *Type1Context) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.EnterType1(s)
-	}
-}
-
-func (s *Type1Context) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.ExitType1(s)
-	}
-}
-
 func (p *CDDLParser) Type1() (localctx IType1Context) {
 	this := p
 	_ = this
@@ -1999,18 +1878,40 @@ func NewType2Context(parser antlr.Parser, parent antlr.ParserRuleContext, invoki
 
 func (s *Type2Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *Type2Context) VALUE() antlr.TerminalNode {
-	return s.GetToken(CDDLParserVALUE, 0)
+func (s *Type2Context) CopyFrom(ctx *Type2Context) {
+	s.BaseParserRuleContext.CopyFrom(ctx.BaseParserRuleContext)
 }
 
-func (s *Type2Context) ID() antlr.TerminalNode {
-	return s.GetToken(CDDLParserID, 0)
+func (s *Type2Context) GetRuleContext() antlr.RuleContext {
+	return s
 }
 
-func (s *Type2Context) GenericArg() IGenericArgContext {
+func (s *Type2Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+type MapExprContext struct {
+	*Type2Context
+}
+
+func NewMapExprContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *MapExprContext {
+	var p = new(MapExprContext)
+
+	p.Type2Context = NewEmptyType2Context()
+	p.parser = parser
+	p.CopyFrom(ctx.(*Type2Context))
+
+	return p
+}
+
+func (s *MapExprContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *MapExprContext) Groups() IGroupsContext {
 	var t antlr.RuleContext
 	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IGenericArgContext); ok {
+		if _, ok := ctx.(IGroupsContext); ok {
 			t = ctx.(antlr.RuleContext)
 			break
 		}
@@ -2020,10 +1921,105 @@ func (s *Type2Context) GenericArg() IGenericArgContext {
 		return nil
 	}
 
-	return t.(IGenericArgContext)
+	return t.(IGroupsContext)
 }
 
-func (s *Type2Context) Type_() ITypeContext {
+func (s *MapExprContext) AllS() []antlr.TerminalNode {
+	return s.GetTokens(CDDLParserS)
+}
+
+func (s *MapExprContext) S(i int) antlr.TerminalNode {
+	return s.GetToken(CDDLParserS, i)
+}
+
+type ChoiceExprContext struct {
+	*Type2Context
+}
+
+func NewChoiceExprContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *ChoiceExprContext {
+	var p = new(ChoiceExprContext)
+
+	p.Type2Context = NewEmptyType2Context()
+	p.parser = parser
+	p.CopyFrom(ctx.(*Type2Context))
+
+	return p
+}
+
+func (s *ChoiceExprContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *ChoiceExprContext) Groups() IGroupsContext {
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IGroupsContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IGroupsContext)
+}
+
+func (s *ChoiceExprContext) AllS() []antlr.TerminalNode {
+	return s.GetTokens(CDDLParserS)
+}
+
+func (s *ChoiceExprContext) S(i int) antlr.TerminalNode {
+	return s.GetToken(CDDLParserS, i)
+}
+
+type ValueExprContext struct {
+	*Type2Context
+	value antlr.Token
+}
+
+func NewValueExprContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *ValueExprContext {
+	var p = new(ValueExprContext)
+
+	p.Type2Context = NewEmptyType2Context()
+	p.parser = parser
+	p.CopyFrom(ctx.(*Type2Context))
+
+	return p
+}
+
+func (s *ValueExprContext) GetValue() antlr.Token { return s.value }
+
+func (s *ValueExprContext) SetValue(v antlr.Token) { s.value = v }
+
+func (s *ValueExprContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *ValueExprContext) VALUE() antlr.TerminalNode {
+	return s.GetToken(CDDLParserVALUE, 0)
+}
+
+type GroupExprContext struct {
+	*Type2Context
+}
+
+func NewGroupExprContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *GroupExprContext {
+	var p = new(GroupExprContext)
+
+	p.Type2Context = NewEmptyType2Context()
+	p.parser = parser
+	p.CopyFrom(ctx.(*Type2Context))
+
+	return p
+}
+
+func (s *GroupExprContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *GroupExprContext) Type_() ITypeContext {
 	var t antlr.RuleContext
 	for _, ctx := range s.GetChildren() {
 		if _, ok := ctx.(ITypeContext); ok {
@@ -2039,18 +2035,36 @@ func (s *Type2Context) Type_() ITypeContext {
 	return t.(ITypeContext)
 }
 
-func (s *Type2Context) AllS() []antlr.TerminalNode {
+func (s *GroupExprContext) AllS() []antlr.TerminalNode {
 	return s.GetTokens(CDDLParserS)
 }
 
-func (s *Type2Context) S(i int) antlr.TerminalNode {
+func (s *GroupExprContext) S(i int) antlr.TerminalNode {
 	return s.GetToken(CDDLParserS, i)
 }
 
-func (s *Type2Context) Group() IGroupContext {
+type ArrayExprContext struct {
+	*Type2Context
+}
+
+func NewArrayExprContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *ArrayExprContext {
+	var p = new(ArrayExprContext)
+
+	p.Type2Context = NewEmptyType2Context()
+	p.parser = parser
+	p.CopyFrom(ctx.(*Type2Context))
+
+	return p
+}
+
+func (s *ArrayExprContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *ArrayExprContext) Groups() IGroupsContext {
 	var t antlr.RuleContext
 	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IGroupContext); ok {
+		if _, ok := ctx.(IGroupsContext); ok {
 			t = ctx.(antlr.RuleContext)
 			break
 		}
@@ -2060,35 +2074,263 @@ func (s *Type2Context) Group() IGroupContext {
 		return nil
 	}
 
-	return t.(IGroupContext)
+	return t.(IGroupsContext)
 }
 
-func (s *Type2Context) TAG1() antlr.TerminalNode {
-	return s.GetToken(CDDLParserTAG1, 0)
+func (s *ArrayExprContext) AllS() []antlr.TerminalNode {
+	return s.GetTokens(CDDLParserS)
 }
 
-func (s *Type2Context) TAG2() antlr.TerminalNode {
-	return s.GetToken(CDDLParserTAG2, 0)
+func (s *ArrayExprContext) S(i int) antlr.TerminalNode {
+	return s.GetToken(CDDLParserS, i)
 }
 
-func (s *Type2Context) GetRuleContext() antlr.RuleContext {
+type MajorExprContext struct {
+	*Type2Context
+	major antlr.Token
+}
+
+func NewMajorExprContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *MajorExprContext {
+	var p = new(MajorExprContext)
+
+	p.Type2Context = NewEmptyType2Context()
+	p.parser = parser
+	p.CopyFrom(ctx.(*Type2Context))
+
+	return p
+}
+
+func (s *MajorExprContext) GetMajor() antlr.Token { return s.major }
+
+func (s *MajorExprContext) SetMajor(v antlr.Token) { s.major = v }
+
+func (s *MajorExprContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *Type2Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
+func (s *MajorExprContext) MAJOR() antlr.TerminalNode {
+	return s.GetToken(CDDLParserMAJOR, 0)
 }
 
-func (s *Type2Context) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.EnterType2(s)
-	}
+type IdExprContext struct {
+	*Type2Context
+	id  antlr.Token
+	arg IGenericArgContext
 }
 
-func (s *Type2Context) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.ExitType2(s)
+func NewIdExprContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *IdExprContext {
+	var p = new(IdExprContext)
+
+	p.Type2Context = NewEmptyType2Context()
+	p.parser = parser
+	p.CopyFrom(ctx.(*Type2Context))
+
+	return p
+}
+
+func (s *IdExprContext) GetId() antlr.Token { return s.id }
+
+func (s *IdExprContext) SetId(v antlr.Token) { s.id = v }
+
+func (s *IdExprContext) GetArg() IGenericArgContext { return s.arg }
+
+func (s *IdExprContext) SetArg(v IGenericArgContext) { s.arg = v }
+
+func (s *IdExprContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *IdExprContext) ID() antlr.TerminalNode {
+	return s.GetToken(CDDLParserID, 0)
+}
+
+func (s *IdExprContext) GenericArg() IGenericArgContext {
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IGenericArgContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
 	}
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IGenericArgContext)
+}
+
+type AnyExprContext struct {
+	*Type2Context
+}
+
+func NewAnyExprContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *AnyExprContext {
+	var p = new(AnyExprContext)
+
+	p.Type2Context = NewEmptyType2Context()
+	p.parser = parser
+	p.CopyFrom(ctx.(*Type2Context))
+
+	return p
+}
+
+func (s *AnyExprContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+type UnwrapExprContext struct {
+	*Type2Context
+	id  antlr.Token
+	arg IGenericArgContext
+}
+
+func NewUnwrapExprContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *UnwrapExprContext {
+	var p = new(UnwrapExprContext)
+
+	p.Type2Context = NewEmptyType2Context()
+	p.parser = parser
+	p.CopyFrom(ctx.(*Type2Context))
+
+	return p
+}
+
+func (s *UnwrapExprContext) GetId() antlr.Token { return s.id }
+
+func (s *UnwrapExprContext) SetId(v antlr.Token) { s.id = v }
+
+func (s *UnwrapExprContext) GetArg() IGenericArgContext { return s.arg }
+
+func (s *UnwrapExprContext) SetArg(v IGenericArgContext) { s.arg = v }
+
+func (s *UnwrapExprContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *UnwrapExprContext) ID() antlr.TerminalNode {
+	return s.GetToken(CDDLParserID, 0)
+}
+
+func (s *UnwrapExprContext) S() antlr.TerminalNode {
+	return s.GetToken(CDDLParserS, 0)
+}
+
+func (s *UnwrapExprContext) GenericArg() IGenericArgContext {
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IGenericArgContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IGenericArgContext)
+}
+
+type ChoiceIDExprContext struct {
+	*Type2Context
+	id  antlr.Token
+	arg IGenericArgContext
+}
+
+func NewChoiceIDExprContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *ChoiceIDExprContext {
+	var p = new(ChoiceIDExprContext)
+
+	p.Type2Context = NewEmptyType2Context()
+	p.parser = parser
+	p.CopyFrom(ctx.(*Type2Context))
+
+	return p
+}
+
+func (s *ChoiceIDExprContext) GetId() antlr.Token { return s.id }
+
+func (s *ChoiceIDExprContext) SetId(v antlr.Token) { s.id = v }
+
+func (s *ChoiceIDExprContext) GetArg() IGenericArgContext { return s.arg }
+
+func (s *ChoiceIDExprContext) SetArg(v IGenericArgContext) { s.arg = v }
+
+func (s *ChoiceIDExprContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *ChoiceIDExprContext) ID() antlr.TerminalNode {
+	return s.GetToken(CDDLParserID, 0)
+}
+
+func (s *ChoiceIDExprContext) S() antlr.TerminalNode {
+	return s.GetToken(CDDLParserS, 0)
+}
+
+func (s *ChoiceIDExprContext) GenericArg() IGenericArgContext {
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IGenericArgContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IGenericArgContext)
+}
+
+type TaggedExprContext struct {
+	*Type2Context
+	tag antlr.Token
+}
+
+func NewTaggedExprContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *TaggedExprContext {
+	var p = new(TaggedExprContext)
+
+	p.Type2Context = NewEmptyType2Context()
+	p.parser = parser
+	p.CopyFrom(ctx.(*Type2Context))
+
+	return p
+}
+
+func (s *TaggedExprContext) GetTag() antlr.Token { return s.tag }
+
+func (s *TaggedExprContext) SetTag(v antlr.Token) { s.tag = v }
+
+func (s *TaggedExprContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *TaggedExprContext) Type_() ITypeContext {
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(ITypeContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(ITypeContext)
+}
+
+func (s *TaggedExprContext) TAG() antlr.TerminalNode {
+	return s.GetToken(CDDLParserTAG, 0)
+}
+
+func (s *TaggedExprContext) AllS() []antlr.TerminalNode {
+	return s.GetTokens(CDDLParserS)
+}
+
+func (s *TaggedExprContext) S(i int) antlr.TerminalNode {
+	return s.GetToken(CDDLParserS, i)
 }
 
 func (p *CDDLParser) Type2() (localctx IType2Context) {
@@ -2119,17 +2361,25 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 	p.GetErrorHandler().Sync(p)
 	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 43, p.GetParserRuleContext()) {
 	case 1:
+		localctx = NewValueExprContext(p, localctx)
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(153)
-			p.Match(CDDLParserVALUE)
+
+			var _m = p.Match(CDDLParserVALUE)
+
+			localctx.(*ValueExprContext).value = _m
 		}
 
 	case 2:
+		localctx = NewIdExprContext(p, localctx)
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(154)
-			p.Match(CDDLParserID)
+
+			var _m = p.Match(CDDLParserID)
+
+			localctx.(*IdExprContext).id = _m
 		}
 		p.SetState(156)
 		p.GetErrorHandler().Sync(p)
@@ -2138,12 +2388,16 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 		if _la == CDDLParserT__3 {
 			{
 				p.SetState(155)
-				p.GenericArg()
+
+				var _x = p.GenericArg()
+
+				localctx.(*IdExprContext).arg = _x
 			}
 
 		}
 
 	case 3:
+		localctx = NewGroupExprContext(p, localctx)
 		p.EnterOuterAlt(localctx, 3)
 		{
 			p.SetState(158)
@@ -2181,6 +2435,7 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 		}
 
 	case 4:
+		localctx = NewMapExprContext(p, localctx)
 		p.EnterOuterAlt(localctx, 4)
 		{
 			p.SetState(168)
@@ -2198,7 +2453,7 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 		}
 		{
 			p.SetState(172)
-			p.Group()
+			p.Groups()
 		}
 		p.SetState(174)
 		p.GetErrorHandler().Sync(p)
@@ -2217,6 +2472,7 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 		}
 
 	case 5:
+		localctx = NewArrayExprContext(p, localctx)
 		p.EnterOuterAlt(localctx, 5)
 		{
 			p.SetState(178)
@@ -2234,7 +2490,7 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 		}
 		{
 			p.SetState(182)
-			p.Group()
+			p.Groups()
 		}
 		p.SetState(184)
 		p.GetErrorHandler().Sync(p)
@@ -2253,6 +2509,7 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 		}
 
 	case 6:
+		localctx = NewUnwrapExprContext(p, localctx)
 		p.EnterOuterAlt(localctx, 6)
 		{
 			p.SetState(188)
@@ -2271,7 +2528,10 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 		}
 		{
 			p.SetState(192)
-			p.Match(CDDLParserID)
+
+			var _m = p.Match(CDDLParserID)
+
+			localctx.(*UnwrapExprContext).id = _m
 		}
 		p.SetState(194)
 		p.GetErrorHandler().Sync(p)
@@ -2280,12 +2540,16 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 		if _la == CDDLParserT__3 {
 			{
 				p.SetState(193)
-				p.GenericArg()
+
+				var _x = p.GenericArg()
+
+				localctx.(*UnwrapExprContext).arg = _x
 			}
 
 		}
 
 	case 7:
+		localctx = NewChoiceExprContext(p, localctx)
 		p.EnterOuterAlt(localctx, 7)
 		{
 			p.SetState(196)
@@ -2318,7 +2582,7 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 		}
 		{
 			p.SetState(204)
-			p.Group()
+			p.Groups()
 		}
 		p.SetState(206)
 		p.GetErrorHandler().Sync(p)
@@ -2337,6 +2601,7 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 		}
 
 	case 8:
+		localctx = NewChoiceIDExprContext(p, localctx)
 		p.EnterOuterAlt(localctx, 8)
 		{
 			p.SetState(210)
@@ -2355,7 +2620,10 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 		}
 		{
 			p.SetState(214)
-			p.Match(CDDLParserID)
+
+			var _m = p.Match(CDDLParserID)
+
+			localctx.(*ChoiceIDExprContext).id = _m
 		}
 		p.SetState(216)
 		p.GetErrorHandler().Sync(p)
@@ -2364,16 +2632,23 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 		if _la == CDDLParserT__3 {
 			{
 				p.SetState(215)
-				p.GenericArg()
+
+				var _x = p.GenericArg()
+
+				localctx.(*ChoiceIDExprContext).arg = _x
 			}
 
 		}
 
 	case 9:
+		localctx = NewTaggedExprContext(p, localctx)
 		p.EnterOuterAlt(localctx, 9)
 		{
 			p.SetState(218)
-			p.Match(CDDLParserTAG1)
+
+			var _m = p.Match(CDDLParserTAG)
+
+			localctx.(*TaggedExprContext).tag = _m
 		}
 		{
 			p.SetState(219)
@@ -2411,13 +2686,18 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 		}
 
 	case 10:
+		localctx = NewMajorExprContext(p, localctx)
 		p.EnterOuterAlt(localctx, 10)
 		{
 			p.SetState(229)
-			p.Match(CDDLParserTAG2)
+
+			var _m = p.Match(CDDLParserMAJOR)
+
+			localctx.(*MajorExprContext).major = _m
 		}
 
 	case 11:
+		localctx = NewAnyExprContext(p, localctx)
 		p.EnterOuterAlt(localctx, 11)
 		{
 			p.SetState(230)
@@ -2429,45 +2709,45 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 	return localctx
 }
 
-// IGroupContext is an interface to support dynamic dispatch.
-type IGroupContext interface {
+// IGroupsContext is an interface to support dynamic dispatch.
+type IGroupsContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsGroupContext differentiates from other interfaces.
-	IsGroupContext()
+	// IsGroupsContext differentiates from other interfaces.
+	IsGroupsContext()
 }
 
-type GroupContext struct {
+type GroupsContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyGroupContext() *GroupContext {
-	var p = new(GroupContext)
+func NewEmptyGroupsContext() *GroupsContext {
+	var p = new(GroupsContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = CDDLParserRULE_group
+	p.RuleIndex = CDDLParserRULE_groups
 	return p
 }
 
-func (*GroupContext) IsGroupContext() {}
+func (*GroupsContext) IsGroupsContext() {}
 
-func NewGroupContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *GroupContext {
-	var p = new(GroupContext)
+func NewGroupsContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *GroupsContext {
+	var p = new(GroupsContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = CDDLParserRULE_group
+	p.RuleIndex = CDDLParserRULE_groups
 
 	return p
 }
 
-func (s *GroupContext) GetParser() antlr.Parser { return s.parser }
+func (s *GroupsContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *GroupContext) AllGroupChoice() []IGroupChoiceContext {
+func (s *GroupsContext) AllGroupChoice() []IGroupChoiceContext {
 	children := s.GetChildren()
 	len := 0
 	for _, ctx := range children {
@@ -2488,7 +2768,7 @@ func (s *GroupContext) AllGroupChoice() []IGroupChoiceContext {
 	return tst
 }
 
-func (s *GroupContext) GroupChoice(i int) IGroupChoiceContext {
+func (s *GroupsContext) GroupChoice(i int) IGroupChoiceContext {
 	var t antlr.RuleContext
 	j := 0
 	for _, ctx := range s.GetChildren() {
@@ -2508,40 +2788,28 @@ func (s *GroupContext) GroupChoice(i int) IGroupChoiceContext {
 	return t.(IGroupChoiceContext)
 }
 
-func (s *GroupContext) AllS() []antlr.TerminalNode {
+func (s *GroupsContext) AllS() []antlr.TerminalNode {
 	return s.GetTokens(CDDLParserS)
 }
 
-func (s *GroupContext) S(i int) antlr.TerminalNode {
+func (s *GroupsContext) S(i int) antlr.TerminalNode {
 	return s.GetToken(CDDLParserS, i)
 }
 
-func (s *GroupContext) GetRuleContext() antlr.RuleContext {
+func (s *GroupsContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *GroupContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *GroupsContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *GroupContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.EnterGroup(s)
-	}
-}
-
-func (s *GroupContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.ExitGroup(s)
-	}
-}
-
-func (p *CDDLParser) Group() (localctx IGroupContext) {
+func (p *CDDLParser) Groups() (localctx IGroupsContext) {
 	this := p
 	_ = this
 
-	localctx = NewGroupContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 22, CDDLParserRULE_group)
+	localctx = NewGroupsContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 22, CDDLParserRULE_groups)
 	var _la int
 
 	defer func() {
@@ -2740,25 +3008,12 @@ func (s *GroupChoiceContext) ToStringTree(ruleNames []string, recog antlr.Recogn
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *GroupChoiceContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.EnterGroupChoice(s)
-	}
-}
-
-func (s *GroupChoiceContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.ExitGroupChoice(s)
-	}
-}
-
 func (p *CDDLParser) GroupChoice() (localctx IGroupChoiceContext) {
 	this := p
 	_ = this
 
 	localctx = NewGroupChoiceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, CDDLParserRULE_groupChoice)
-	var _la int
 
 	defer func() {
 		p.ExitRule()
@@ -2776,24 +3031,28 @@ func (p *CDDLParser) GroupChoice() (localctx IGroupChoiceContext) {
 		}
 	}()
 
+	var _alt int
+
 	p.EnterOuterAlt(localctx, 1)
 	p.SetState(252)
 	p.GetErrorHandler().Sync(p)
-	_la = p.GetTokenStream().LA(1)
+	_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 47, p.GetParserRuleContext())
 
-	for (int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&241292544) != 0 {
-		{
-			p.SetState(247)
-			p.GroupEntry()
-		}
-		{
-			p.SetState(248)
-			p.OptComma()
-		}
+	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
+		if _alt == 1 {
+			{
+				p.SetState(247)
+				p.GroupEntry()
+			}
+			{
+				p.SetState(248)
+				p.OptComma()
+			}
 
+		}
 		p.SetState(254)
 		p.GetErrorHandler().Sync(p)
-		_la = p.GetTokenStream().LA(1)
+		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 47, p.GetParserRuleContext())
 	}
 
 	return localctx
@@ -2837,10 +3096,40 @@ func NewGroupEntryContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 
 func (s *GroupEntryContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *GroupEntryContext) Type_() ITypeContext {
+func (s *GroupEntryContext) CopyFrom(ctx *GroupEntryContext) {
+	s.BaseParserRuleContext.CopyFrom(ctx.BaseParserRuleContext)
+}
+
+func (s *GroupEntryContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *GroupEntryContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+type GroupsEntryContext struct {
+	*GroupEntryContext
+}
+
+func NewGroupsEntryContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *GroupsEntryContext {
+	var p = new(GroupsEntryContext)
+
+	p.GroupEntryContext = NewEmptyGroupEntryContext()
+	p.parser = parser
+	p.CopyFrom(ctx.(*GroupEntryContext))
+
+	return p
+}
+
+func (s *GroupsEntryContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *GroupsEntryContext) Groups() IGroupsContext {
 	var t antlr.RuleContext
 	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(ITypeContext); ok {
+		if _, ok := ctx.(IGroupsContext); ok {
 			t = ctx.(antlr.RuleContext)
 			break
 		}
@@ -2850,42 +3139,62 @@ func (s *GroupEntryContext) Type_() ITypeContext {
 		return nil
 	}
 
-	return t.(ITypeContext)
+	return t.(IGroupsContext)
 }
 
-func (s *GroupEntryContext) OCCUR() antlr.TerminalNode {
+func (s *GroupsEntryContext) OCCUR() antlr.TerminalNode {
 	return s.GetToken(CDDLParserOCCUR, 0)
 }
 
-func (s *GroupEntryContext) MemberKey() IMemberKeyContext {
-	var t antlr.RuleContext
-	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IMemberKeyContext); ok {
-			t = ctx.(antlr.RuleContext)
-			break
-		}
-	}
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IMemberKeyContext)
-}
-
-func (s *GroupEntryContext) AllS() []antlr.TerminalNode {
+func (s *GroupsEntryContext) AllS() []antlr.TerminalNode {
 	return s.GetTokens(CDDLParserS)
 }
 
-func (s *GroupEntryContext) S(i int) antlr.TerminalNode {
+func (s *GroupsEntryContext) S(i int) antlr.TerminalNode {
 	return s.GetToken(CDDLParserS, i)
 }
 
-func (s *GroupEntryContext) ID() antlr.TerminalNode {
+type NameEntryContext struct {
+	*GroupEntryContext
+	id  antlr.Token
+	arg IGenericArgContext
+}
+
+func NewNameEntryContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *NameEntryContext {
+	var p = new(NameEntryContext)
+
+	p.GroupEntryContext = NewEmptyGroupEntryContext()
+	p.parser = parser
+	p.CopyFrom(ctx.(*GroupEntryContext))
+
+	return p
+}
+
+func (s *NameEntryContext) GetId() antlr.Token { return s.id }
+
+func (s *NameEntryContext) SetId(v antlr.Token) { s.id = v }
+
+func (s *NameEntryContext) GetArg() IGenericArgContext { return s.arg }
+
+func (s *NameEntryContext) SetArg(v IGenericArgContext) { s.arg = v }
+
+func (s *NameEntryContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *NameEntryContext) ID() antlr.TerminalNode {
 	return s.GetToken(CDDLParserID, 0)
 }
 
-func (s *GroupEntryContext) GenericArg() IGenericArgContext {
+func (s *NameEntryContext) OCCUR() antlr.TerminalNode {
+	return s.GetToken(CDDLParserOCCUR, 0)
+}
+
+func (s *NameEntryContext) S() antlr.TerminalNode {
+	return s.GetToken(CDDLParserS, 0)
+}
+
+func (s *NameEntryContext) GenericArg() IGenericArgContext {
 	var t antlr.RuleContext
 	for _, ctx := range s.GetChildren() {
 		if _, ok := ctx.(IGenericArgContext); ok {
@@ -2901,10 +3210,28 @@ func (s *GroupEntryContext) GenericArg() IGenericArgContext {
 	return t.(IGenericArgContext)
 }
 
-func (s *GroupEntryContext) Group() IGroupContext {
+type TypeEntryContext struct {
+	*GroupEntryContext
+}
+
+func NewTypeEntryContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *TypeEntryContext {
+	var p = new(TypeEntryContext)
+
+	p.GroupEntryContext = NewEmptyGroupEntryContext()
+	p.parser = parser
+	p.CopyFrom(ctx.(*GroupEntryContext))
+
+	return p
+}
+
+func (s *TypeEntryContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *TypeEntryContext) Type_() ITypeContext {
 	var t antlr.RuleContext
 	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IGroupContext); ok {
+		if _, ok := ctx.(ITypeContext); ok {
 			t = ctx.(antlr.RuleContext)
 			break
 		}
@@ -2914,27 +3241,35 @@ func (s *GroupEntryContext) Group() IGroupContext {
 		return nil
 	}
 
-	return t.(IGroupContext)
+	return t.(ITypeContext)
 }
 
-func (s *GroupEntryContext) GetRuleContext() antlr.RuleContext {
-	return s
+func (s *TypeEntryContext) OCCUR() antlr.TerminalNode {
+	return s.GetToken(CDDLParserOCCUR, 0)
 }
 
-func (s *GroupEntryContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
+func (s *TypeEntryContext) AllS() []antlr.TerminalNode {
+	return s.GetTokens(CDDLParserS)
 }
 
-func (s *GroupEntryContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.EnterGroupEntry(s)
+func (s *TypeEntryContext) S(i int) antlr.TerminalNode {
+	return s.GetToken(CDDLParserS, i)
+}
+
+func (s *TypeEntryContext) MemberKey() IMemberKeyContext {
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IMemberKeyContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
 	}
-}
 
-func (s *GroupEntryContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.ExitGroupEntry(s)
+	if t == nil {
+		return nil
 	}
+
+	return t.(IMemberKeyContext)
 }
 
 func (p *CDDLParser) GroupEntry() (localctx IGroupEntryContext) {
@@ -2965,8 +3300,9 @@ func (p *CDDLParser) GroupEntry() (localctx IGroupEntryContext) {
 	p.GetErrorHandler().Sync(p)
 	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 59, p.GetParserRuleContext()) {
 	case 1:
+		localctx = NewTypeEntryContext(p, localctx)
 		p.EnterOuterAlt(localctx, 1)
-		p.SetState(259)
+		p.SetState(256)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
@@ -2975,37 +3311,36 @@ func (p *CDDLParser) GroupEntry() (localctx IGroupEntryContext) {
 				p.SetState(255)
 				p.Match(CDDLParserOCCUR)
 			}
-			p.SetState(257)
-			p.GetErrorHandler().Sync(p)
-			_la = p.GetTokenStream().LA(1)
 
-			if _la == CDDLParserS {
-				{
-					p.SetState(256)
-					p.Match(CDDLParserS)
-				}
+		}
+		p.SetState(259)
+		p.GetErrorHandler().Sync(p)
 
+		if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 49, p.GetParserRuleContext()) == 1 {
+			{
+				p.SetState(258)
+				p.Match(CDDLParserS)
+			}
+
+		}
+		p.SetState(262)
+		p.GetErrorHandler().Sync(p)
+
+		if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 50, p.GetParserRuleContext()) == 1 {
+			{
+				p.SetState(261)
+				p.MemberKey()
 			}
 
 		}
 		p.SetState(265)
 		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
 
-		if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 51, p.GetParserRuleContext()) == 1 {
+		if _la == CDDLParserS {
 			{
-				p.SetState(261)
-				p.MemberKey()
-			}
-			p.SetState(263)
-			p.GetErrorHandler().Sync(p)
-			_la = p.GetTokenStream().LA(1)
-
-			if _la == CDDLParserS {
-				{
-					p.SetState(262)
-					p.Match(CDDLParserS)
-				}
-
+				p.SetState(264)
+				p.Match(CDDLParserS)
 			}
 
 		}
@@ -3015,8 +3350,9 @@ func (p *CDDLParser) GroupEntry() (localctx IGroupEntryContext) {
 		}
 
 	case 2:
+		localctx = NewNameEntryContext(p, localctx)
 		p.EnterOuterAlt(localctx, 2)
-		p.SetState(272)
+		p.SetState(269)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
@@ -3025,22 +3361,25 @@ func (p *CDDLParser) GroupEntry() (localctx IGroupEntryContext) {
 				p.SetState(268)
 				p.Match(CDDLParserOCCUR)
 			}
-			p.SetState(270)
-			p.GetErrorHandler().Sync(p)
-			_la = p.GetTokenStream().LA(1)
 
-			if _la == CDDLParserS {
-				{
-					p.SetState(269)
-					p.Match(CDDLParserS)
-				}
+		}
+		p.SetState(272)
+		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
 
+		if _la == CDDLParserS {
+			{
+				p.SetState(271)
+				p.Match(CDDLParserS)
 			}
 
 		}
 		{
 			p.SetState(274)
-			p.Match(CDDLParserID)
+
+			var _m = p.Match(CDDLParserID)
+
+			localctx.(*NameEntryContext).id = _m
 		}
 		p.SetState(276)
 		p.GetErrorHandler().Sync(p)
@@ -3049,14 +3388,18 @@ func (p *CDDLParser) GroupEntry() (localctx IGroupEntryContext) {
 		if _la == CDDLParserT__3 {
 			{
 				p.SetState(275)
-				p.GenericArg()
+
+				var _x = p.GenericArg()
+
+				localctx.(*NameEntryContext).arg = _x
 			}
 
 		}
 
 	case 3:
+		localctx = NewGroupsEntryContext(p, localctx)
 		p.EnterOuterAlt(localctx, 3)
-		p.SetState(282)
+		p.SetState(279)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
@@ -3065,16 +3408,16 @@ func (p *CDDLParser) GroupEntry() (localctx IGroupEntryContext) {
 				p.SetState(278)
 				p.Match(CDDLParserOCCUR)
 			}
-			p.SetState(280)
-			p.GetErrorHandler().Sync(p)
-			_la = p.GetTokenStream().LA(1)
 
-			if _la == CDDLParserS {
-				{
-					p.SetState(279)
-					p.Match(CDDLParserS)
-				}
+		}
+		p.SetState(282)
+		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
 
+		if _la == CDDLParserS {
+			{
+				p.SetState(281)
+				p.Match(CDDLParserS)
 			}
 
 		}
@@ -3094,7 +3437,7 @@ func (p *CDDLParser) GroupEntry() (localctx IGroupEntryContext) {
 		}
 		{
 			p.SetState(288)
-			p.Group()
+			p.Groups()
 		}
 		p.SetState(290)
 		p.GetErrorHandler().Sync(p)
@@ -3155,7 +3498,42 @@ func NewMemberKeyContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 
 func (s *MemberKeyContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *MemberKeyContext) Type1() IType1Context {
+func (s *MemberKeyContext) CopyFrom(ctx *MemberKeyContext) {
+	s.BaseParserRuleContext.CopyFrom(ctx.BaseParserRuleContext)
+}
+
+func (s *MemberKeyContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *MemberKeyContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+type TypeMemberContext struct {
+	*MemberKeyContext
+	cut antlr.Token
+}
+
+func NewTypeMemberContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *TypeMemberContext {
+	var p = new(TypeMemberContext)
+
+	p.MemberKeyContext = NewEmptyMemberKeyContext()
+	p.parser = parser
+	p.CopyFrom(ctx.(*MemberKeyContext))
+
+	return p
+}
+
+func (s *TypeMemberContext) GetCut() antlr.Token { return s.cut }
+
+func (s *TypeMemberContext) SetCut(v antlr.Token) { s.cut = v }
+
+func (s *TypeMemberContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *TypeMemberContext) Type1() IType1Context {
 	var t antlr.RuleContext
 	for _, ctx := range s.GetChildren() {
 		if _, ok := ctx.(IType1Context); ok {
@@ -3171,40 +3549,74 @@ func (s *MemberKeyContext) Type1() IType1Context {
 	return t.(IType1Context)
 }
 
-func (s *MemberKeyContext) AllS() []antlr.TerminalNode {
+func (s *TypeMemberContext) AllS() []antlr.TerminalNode {
 	return s.GetTokens(CDDLParserS)
 }
 
-func (s *MemberKeyContext) S(i int) antlr.TerminalNode {
+func (s *TypeMemberContext) S(i int) antlr.TerminalNode {
 	return s.GetToken(CDDLParserS, i)
 }
 
-func (s *MemberKeyContext) ID() antlr.TerminalNode {
-	return s.GetToken(CDDLParserID, 0)
+type ValueMemberContext struct {
+	*MemberKeyContext
+	value antlr.Token
 }
 
-func (s *MemberKeyContext) VALUE() antlr.TerminalNode {
-	return s.GetToken(CDDLParserVALUE, 0)
+func NewValueMemberContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *ValueMemberContext {
+	var p = new(ValueMemberContext)
+
+	p.MemberKeyContext = NewEmptyMemberKeyContext()
+	p.parser = parser
+	p.CopyFrom(ctx.(*MemberKeyContext))
+
+	return p
 }
 
-func (s *MemberKeyContext) GetRuleContext() antlr.RuleContext {
+func (s *ValueMemberContext) GetValue() antlr.Token { return s.value }
+
+func (s *ValueMemberContext) SetValue(v antlr.Token) { s.value = v }
+
+func (s *ValueMemberContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *MemberKeyContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
+func (s *ValueMemberContext) VALUE() antlr.TerminalNode {
+	return s.GetToken(CDDLParserVALUE, 0)
 }
 
-func (s *MemberKeyContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.EnterMemberKey(s)
-	}
+func (s *ValueMemberContext) S() antlr.TerminalNode {
+	return s.GetToken(CDDLParserS, 0)
 }
 
-func (s *MemberKeyContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.ExitMemberKey(s)
-	}
+type NameMemberContext struct {
+	*MemberKeyContext
+	id antlr.Token
+}
+
+func NewNameMemberContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *NameMemberContext {
+	var p = new(NameMemberContext)
+
+	p.MemberKeyContext = NewEmptyMemberKeyContext()
+	p.parser = parser
+	p.CopyFrom(ctx.(*MemberKeyContext))
+
+	return p
+}
+
+func (s *NameMemberContext) GetId() antlr.Token { return s.id }
+
+func (s *NameMemberContext) SetId(v antlr.Token) { s.id = v }
+
+func (s *NameMemberContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *NameMemberContext) ID() antlr.TerminalNode {
+	return s.GetToken(CDDLParserID, 0)
+}
+
+func (s *NameMemberContext) S() antlr.TerminalNode {
+	return s.GetToken(CDDLParserS, 0)
 }
 
 func (p *CDDLParser) MemberKey() (localctx IMemberKeyContext) {
@@ -3235,6 +3647,7 @@ func (p *CDDLParser) MemberKey() (localctx IMemberKeyContext) {
 	p.GetErrorHandler().Sync(p)
 	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 65, p.GetParserRuleContext()) {
 	case 1:
+		localctx = NewTypeMemberContext(p, localctx)
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(296)
@@ -3242,12 +3655,25 @@ func (p *CDDLParser) MemberKey() (localctx IMemberKeyContext) {
 		}
 		p.SetState(298)
 		p.GetErrorHandler().Sync(p)
-		_la = p.GetTokenStream().LA(1)
 
-		if _la == CDDLParserS {
+		if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 60, p.GetParserRuleContext()) == 1 {
 			{
 				p.SetState(297)
 				p.Match(CDDLParserS)
+			}
+
+		}
+		p.SetState(301)
+		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
+
+		if _la == CDDLParserT__17 {
+			{
+				p.SetState(300)
+
+				var _m = p.Match(CDDLParserT__17)
+
+				localctx.(*TypeMemberContext).cut = _m
 			}
 
 		}
@@ -3255,21 +3681,10 @@ func (p *CDDLParser) MemberKey() (localctx IMemberKeyContext) {
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if _la == CDDLParserT__17 {
+		if _la == CDDLParserS {
 			{
-				p.SetState(300)
-				p.Match(CDDLParserT__17)
-			}
-			p.SetState(302)
-			p.GetErrorHandler().Sync(p)
-			_la = p.GetTokenStream().LA(1)
-
-			if _la == CDDLParserS {
-				{
-					p.SetState(301)
-					p.Match(CDDLParserS)
-				}
-
+				p.SetState(303)
+				p.Match(CDDLParserS)
 			}
 
 		}
@@ -3279,10 +3694,14 @@ func (p *CDDLParser) MemberKey() (localctx IMemberKeyContext) {
 		}
 
 	case 2:
+		localctx = NewNameMemberContext(p, localctx)
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(308)
-			p.Match(CDDLParserID)
+
+			var _m = p.Match(CDDLParserID)
+
+			localctx.(*NameMemberContext).id = _m
 		}
 		p.SetState(310)
 		p.GetErrorHandler().Sync(p)
@@ -3301,10 +3720,14 @@ func (p *CDDLParser) MemberKey() (localctx IMemberKeyContext) {
 		}
 
 	case 3:
+		localctx = NewValueMemberContext(p, localctx)
 		p.EnterOuterAlt(localctx, 3)
 		{
 			p.SetState(313)
-			p.Match(CDDLParserVALUE)
+
+			var _m = p.Match(CDDLParserVALUE)
+
+			localctx.(*ValueMemberContext).value = _m
 		}
 		p.SetState(315)
 		p.GetErrorHandler().Sync(p)
@@ -3379,18 +3802,6 @@ func (s *OptCommaContext) GetRuleContext() antlr.RuleContext {
 
 func (s *OptCommaContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *OptCommaContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.EnterOptComma(s)
-	}
-}
-
-func (s *OptCommaContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(CDDLListener); ok {
-		listenerT.ExitOptComma(s)
-	}
 }
 
 func (p *CDDLParser) OptComma() (localctx IOptCommaContext) {

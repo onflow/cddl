@@ -21,22 +21,22 @@ type : type1 (S? '/' S? type1)* ;
 type1 : type2 (S? (RANGEOP | CTLOP) S? type2)? ;
 /* space may be needed before the operator if type2 ends in a name */
 
-type2 : VALUE
-      | ID genericArg?
-      | '(' S? type S? ')'
-      | '{' S? group S? '}'
-      | '[' S? group S? ']'
-      | '~' S? ID genericArg?
-      | '&' S? '(' S? group S? ')'
-      | '&' S? ID genericArg?
-      | TAG1 '(' S? type S? ')'
-      | TAG2              /* major/ai */
-      | '#'               /* any */
+type2 : value=VALUE                     #ValueExpr
+      | id=ID arg=genericArg?           #IdExpr
+      | '(' S? type S? ')'              #GroupExpr
+      | '{' S? groups S? '}'            #MapExpr
+      | '[' S? groups S? ']'            #ArrayExpr
+      | '~' S? id=ID arg=genericArg?    #UnwrapExpr
+      | '&' S? '(' S? groups S? ')'     #ChoiceExpr
+      | '&' S? id=ID arg=genericArg?    #ChoiceIDExpr
+      | tag=TAG '(' S? type S? ')'      #TaggedExpr
+      | major=MAJOR                     #MajorExpr
+      | '#'                             #AnyExpr
       ;
 
-TAG1 : '#' '6' ('.' UINT)? ;
+TAG : '#' '6' ('.' UINT)? ;
 
-TAG2 : '#' DIGIT ('.' UINT)? ;
+MAJOR : '#' DIGIT ('.' UINT)? ;
 
 RANGEOP : '...'
         | '..'
@@ -44,18 +44,18 @@ RANGEOP : '...'
 
 CTLOP : '.' ID ;
 
-group : groupChoice (S? '//' S? groupChoice)* ;
+groups : groupChoice (S? '//' S? groupChoice)* ;
 
 groupChoice : (groupEntry optComma)* ;
 
-groupEntry : (OCCUR S?)? (memberKey S?)? type
-            | (OCCUR S?)? ID genericArg?  /* preempted by above */
-            | (OCCUR S?)? '(' S? group S? ')'
-            ;
+groupEntry : OCCUR? S? memberKey? S? type                                 #TypeEntry
+           | OCCUR? S? id=ID arg=genericArg?  /* preempted by above */    #NameEntry
+           | OCCUR? S? '(' S? groups S? ')'                               #GroupsEntry
+           ;
 
-memberKey : type1 S? ('^' S?)? '=>'
-          | ID S? ':'
-          | VALUE S? ':'
+memberKey : type1 S? cut='^'? S? '=>'    #TypeMember
+          | id=ID S? ':'                 #NameMember
+          | value=VALUE S? ':'           #ValueMember
           ;
 
 optComma : S? ','? S? ;
