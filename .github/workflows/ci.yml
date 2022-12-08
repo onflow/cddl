@@ -3,12 +3,12 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - main
       - 'feature/**'
       - 'v**'
   pull_request:
     branches:
-      - master
+      - main
       - 'feature/**'
       - 'v**'
 
