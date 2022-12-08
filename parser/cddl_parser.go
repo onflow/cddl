@@ -42,172 +42,169 @@ func cddlParserInit() {
 		"ID", "S",
 	}
 	staticData.ruleNames = []string{
-		"cddl", "rule", "typeRule", "groupRule", "assignType", "assignGroup",
-		"genericParam", "genericArg", "type", "type1", "type2", "groups", "groupChoice",
-		"groupEntry", "memberKey", "optComma",
+		"cddl", "rule", "assignType", "assignGroup", "genericParam", "genericArg",
+		"type", "type1", "type2", "group", "groupChoice", "groupEntry", "memberKey",
+		"optComma",
 	}
 	staticData.predictionContextCache = antlr.NewPredictionContextCache()
 	staticData.serializedATN = []int32{
-		4, 1, 28, 330, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 2, 4, 7,
+		4, 1, 28, 324, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 2, 4, 7,
 		4, 2, 5, 7, 5, 2, 6, 7, 6, 2, 7, 7, 7, 2, 8, 7, 8, 2, 9, 7, 9, 2, 10, 7,
-		10, 2, 11, 7, 11, 2, 12, 7, 12, 2, 13, 7, 13, 2, 14, 7, 14, 2, 15, 7, 15,
-		1, 0, 3, 0, 34, 8, 0, 1, 0, 1, 0, 3, 0, 38, 8, 0, 4, 0, 40, 8, 0, 11, 0,
-		12, 0, 41, 1, 0, 3, 0, 45, 8, 0, 1, 0, 1, 0, 1, 1, 1, 1, 3, 1, 51, 8, 1,
-		1, 2, 1, 2, 3, 2, 55, 8, 2, 1, 2, 3, 2, 58, 8, 2, 1, 2, 1, 2, 3, 2, 62,
-		8, 2, 1, 2, 1, 2, 1, 3, 1, 3, 3, 3, 68, 8, 3, 1, 3, 3, 3, 71, 8, 3, 1,
-		3, 1, 3, 3, 3, 75, 8, 3, 1, 3, 1, 3, 1, 4, 1, 4, 1, 5, 1, 5, 1, 6, 1, 6,
-		3, 6, 85, 8, 6, 1, 6, 1, 6, 3, 6, 89, 8, 6, 1, 6, 1, 6, 3, 6, 93, 8, 6,
-		1, 6, 1, 6, 3, 6, 97, 8, 6, 5, 6, 99, 8, 6, 10, 6, 12, 6, 102, 9, 6, 1,
-		6, 1, 6, 1, 7, 1, 7, 3, 7, 108, 8, 7, 1, 7, 1, 7, 3, 7, 112, 8, 7, 1, 7,
-		1, 7, 3, 7, 116, 8, 7, 1, 7, 1, 7, 3, 7, 120, 8, 7, 5, 7, 122, 8, 7, 10,
-		7, 12, 7, 125, 9, 7, 1, 7, 1, 7, 1, 8, 1, 8, 3, 8, 131, 8, 8, 1, 8, 1,
-		8, 3, 8, 135, 8, 8, 1, 8, 5, 8, 138, 8, 8, 10, 8, 12, 8, 141, 9, 8, 1,
-		9, 1, 9, 3, 9, 145, 8, 9, 1, 9, 1, 9, 3, 9, 149, 8, 9, 1, 9, 3, 9, 152,
-		8, 9, 1, 10, 1, 10, 1, 10, 3, 10, 157, 8, 10, 1, 10, 1, 10, 3, 10, 161,
-		8, 10, 1, 10, 1, 10, 3, 10, 165, 8, 10, 1, 10, 1, 10, 1, 10, 1, 10, 3,
-		10, 171, 8, 10, 1, 10, 1, 10, 3, 10, 175, 8, 10, 1, 10, 1, 10, 1, 10, 1,
-		10, 3, 10, 181, 8, 10, 1, 10, 1, 10, 3, 10, 185, 8, 10, 1, 10, 1, 10, 1,
-		10, 1, 10, 3, 10, 191, 8, 10, 1, 10, 1, 10, 3, 10, 195, 8, 10, 1, 10, 1,
-		10, 3, 10, 199, 8, 10, 1, 10, 1, 10, 3, 10, 203, 8, 10, 1, 10, 1, 10, 3,
-		10, 207, 8, 10, 1, 10, 1, 10, 1, 10, 1, 10, 3, 10, 213, 8, 10, 1, 10, 1,
-		10, 3, 10, 217, 8, 10, 1, 10, 1, 10, 1, 10, 3, 10, 222, 8, 10, 1, 10, 1,
-		10, 3, 10, 226, 8, 10, 1, 10, 1, 10, 1, 10, 1, 10, 3, 10, 232, 8, 10, 1,
-		11, 1, 11, 3, 11, 236, 8, 11, 1, 11, 1, 11, 3, 11, 240, 8, 11, 1, 11, 5,
-		11, 243, 8, 11, 10, 11, 12, 11, 246, 9, 11, 1, 12, 1, 12, 1, 12, 5, 12,
-		251, 8, 12, 10, 12, 12, 12, 254, 9, 12, 1, 13, 3, 13, 257, 8, 13, 1, 13,
-		3, 13, 260, 8, 13, 1, 13, 3, 13, 263, 8, 13, 1, 13, 3, 13, 266, 8, 13,
-		1, 13, 1, 13, 3, 13, 270, 8, 13, 1, 13, 3, 13, 273, 8, 13, 1, 13, 1, 13,
-		3, 13, 277, 8, 13, 1, 13, 3, 13, 280, 8, 13, 1, 13, 3, 13, 283, 8, 13,
-		1, 13, 1, 13, 3, 13, 287, 8, 13, 1, 13, 1, 13, 3, 13, 291, 8, 13, 1, 13,
-		1, 13, 3, 13, 295, 8, 13, 1, 14, 1, 14, 3, 14, 299, 8, 14, 1, 14, 3, 14,
-		302, 8, 14, 1, 14, 3, 14, 305, 8, 14, 1, 14, 1, 14, 1, 14, 1, 14, 3, 14,
-		311, 8, 14, 1, 14, 1, 14, 1, 14, 3, 14, 316, 8, 14, 1, 14, 3, 14, 319,
-		8, 14, 1, 15, 3, 15, 322, 8, 15, 1, 15, 3, 15, 325, 8, 15, 1, 15, 3, 15,
-		328, 8, 15, 1, 15, 0, 0, 16, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22,
-		24, 26, 28, 30, 0, 3, 1, 0, 1, 2, 2, 0, 1, 1, 3, 3, 1, 0, 23, 24, 393,
-		0, 33, 1, 0, 0, 0, 2, 50, 1, 0, 0, 0, 4, 52, 1, 0, 0, 0, 6, 65, 1, 0, 0,
-		0, 8, 78, 1, 0, 0, 0, 10, 80, 1, 0, 0, 0, 12, 82, 1, 0, 0, 0, 14, 105,
-		1, 0, 0, 0, 16, 128, 1, 0, 0, 0, 18, 142, 1, 0, 0, 0, 20, 231, 1, 0, 0,
-		0, 22, 233, 1, 0, 0, 0, 24, 252, 1, 0, 0, 0, 26, 294, 1, 0, 0, 0, 28, 318,
-		1, 0, 0, 0, 30, 321, 1, 0, 0, 0, 32, 34, 5, 28, 0, 0, 33, 32, 1, 0, 0,
-		0, 33, 34, 1, 0, 0, 0, 34, 39, 1, 0, 0, 0, 35, 37, 3, 2, 1, 0, 36, 38,
-		5, 28, 0, 0, 37, 36, 1, 0, 0, 0, 37, 38, 1, 0, 0, 0, 38, 40, 1, 0, 0, 0,
-		39, 35, 1, 0, 0, 0, 40, 41, 1, 0, 0, 0, 41, 39, 1, 0, 0, 0, 41, 42, 1,
-		0, 0, 0, 42, 44, 1, 0, 0, 0, 43, 45, 5, 28, 0, 0, 44, 43, 1, 0, 0, 0, 44,
-		45, 1, 0, 0, 0, 45, 46, 1, 0, 0, 0, 46, 47, 5, 0, 0, 1, 47, 1, 1, 0, 0,
-		0, 48, 51, 3, 4, 2, 0, 49, 51, 3, 6, 3, 0, 50, 48, 1, 0, 0, 0, 50, 49,
-		1, 0, 0, 0, 51, 3, 1, 0, 0, 0, 52, 54, 5, 27, 0, 0, 53, 55, 3, 12, 6, 0,
-		54, 53, 1, 0, 0, 0, 54, 55, 1, 0, 0, 0, 55, 57, 1, 0, 0, 0, 56, 58, 5,
-		28, 0, 0, 57, 56, 1, 0, 0, 0, 57, 58, 1, 0, 0, 0, 58, 59, 1, 0, 0, 0, 59,
-		61, 3, 8, 4, 0, 60, 62, 5, 28, 0, 0, 61, 60, 1, 0, 0, 0, 61, 62, 1, 0,
-		0, 0, 62, 63, 1, 0, 0, 0, 63, 64, 3, 16, 8, 0, 64, 5, 1, 0, 0, 0, 65, 67,
-		5, 27, 0, 0, 66, 68, 3, 12, 6, 0, 67, 66, 1, 0, 0, 0, 67, 68, 1, 0, 0,
-		0, 68, 70, 1, 0, 0, 0, 69, 71, 5, 28, 0, 0, 70, 69, 1, 0, 0, 0, 70, 71,
-		1, 0, 0, 0, 71, 72, 1, 0, 0, 0, 72, 74, 3, 10, 5, 0, 73, 75, 5, 28, 0,
-		0, 74, 73, 1, 0, 0, 0, 74, 75, 1, 0, 0, 0, 75, 76, 1, 0, 0, 0, 76, 77,
-		3, 26, 13, 0, 77, 7, 1, 0, 0, 0, 78, 79, 7, 0, 0, 0, 79, 9, 1, 0, 0, 0,
-		80, 81, 7, 1, 0, 0, 81, 11, 1, 0, 0, 0, 82, 84, 5, 4, 0, 0, 83, 85, 5,
-		28, 0, 0, 84, 83, 1, 0, 0, 0, 84, 85, 1, 0, 0, 0, 85, 86, 1, 0, 0, 0, 86,
-		88, 5, 27, 0, 0, 87, 89, 5, 28, 0, 0, 88, 87, 1, 0, 0, 0, 88, 89, 1, 0,
-		0, 0, 89, 100, 1, 0, 0, 0, 90, 92, 5, 5, 0, 0, 91, 93, 5, 28, 0, 0, 92,
-		91, 1, 0, 0, 0, 92, 93, 1, 0, 0, 0, 93, 94, 1, 0, 0, 0, 94, 96, 5, 27,
-		0, 0, 95, 97, 5, 28, 0, 0, 96, 95, 1, 0, 0, 0, 96, 97, 1, 0, 0, 0, 97,
-		99, 1, 0, 0, 0, 98, 90, 1, 0, 0, 0, 99, 102, 1, 0, 0, 0, 100, 98, 1, 0,
-		0, 0, 100, 101, 1, 0, 0, 0, 101, 103, 1, 0, 0, 0, 102, 100, 1, 0, 0, 0,
-		103, 104, 5, 6, 0, 0, 104, 13, 1, 0, 0, 0, 105, 107, 5, 4, 0, 0, 106, 108,
-		5, 28, 0, 0, 107, 106, 1, 0, 0, 0, 107, 108, 1, 0, 0, 0, 108, 109, 1, 0,
-		0, 0, 109, 111, 3, 18, 9, 0, 110, 112, 5, 28, 0, 0, 111, 110, 1, 0, 0,
-		0, 111, 112, 1, 0, 0, 0, 112, 123, 1, 0, 0, 0, 113, 115, 5, 5, 0, 0, 114,
-		116, 5, 28, 0, 0, 115, 114, 1, 0, 0, 0, 115, 116, 1, 0, 0, 0, 116, 117,
-		1, 0, 0, 0, 117, 119, 3, 18, 9, 0, 118, 120, 5, 28, 0, 0, 119, 118, 1,
-		0, 0, 0, 119, 120, 1, 0, 0, 0, 120, 122, 1, 0, 0, 0, 121, 113, 1, 0, 0,
-		0, 122, 125, 1, 0, 0, 0, 123, 121, 1, 0, 0, 0, 123, 124, 1, 0, 0, 0, 124,
-		126, 1, 0, 0, 0, 125, 123, 1, 0, 0, 0, 126, 127, 5, 6, 0, 0, 127, 15, 1,
-		0, 0, 0, 128, 139, 3, 18, 9, 0, 129, 131, 5, 28, 0, 0, 130, 129, 1, 0,
-		0, 0, 130, 131, 1, 0, 0, 0, 131, 132, 1, 0, 0, 0, 132, 134, 5, 7, 0, 0,
-		133, 135, 5, 28, 0, 0, 134, 133, 1, 0, 0, 0, 134, 135, 1, 0, 0, 0, 135,
-		136, 1, 0, 0, 0, 136, 138, 3, 18, 9, 0, 137, 130, 1, 0, 0, 0, 138, 141,
-		1, 0, 0, 0, 139, 137, 1, 0, 0, 0, 139, 140, 1, 0, 0, 0, 140, 17, 1, 0,
-		0, 0, 141, 139, 1, 0, 0, 0, 142, 151, 3, 20, 10, 0, 143, 145, 5, 28, 0,
-		0, 144, 143, 1, 0, 0, 0, 144, 145, 1, 0, 0, 0, 145, 146, 1, 0, 0, 0, 146,
-		148, 7, 2, 0, 0, 147, 149, 5, 28, 0, 0, 148, 147, 1, 0, 0, 0, 148, 149,
-		1, 0, 0, 0, 149, 150, 1, 0, 0, 0, 150, 152, 3, 20, 10, 0, 151, 144, 1,
-		0, 0, 0, 151, 152, 1, 0, 0, 0, 152, 19, 1, 0, 0, 0, 153, 232, 5, 26, 0,
-		0, 154, 156, 5, 27, 0, 0, 155, 157, 3, 14, 7, 0, 156, 155, 1, 0, 0, 0,
-		156, 157, 1, 0, 0, 0, 157, 232, 1, 0, 0, 0, 158, 160, 5, 8, 0, 0, 159,
-		161, 5, 28, 0, 0, 160, 159, 1, 0, 0, 0, 160, 161, 1, 0, 0, 0, 161, 162,
-		1, 0, 0, 0, 162, 164, 3, 16, 8, 0, 163, 165, 5, 28, 0, 0, 164, 163, 1,
-		0, 0, 0, 164, 165, 1, 0, 0, 0, 165, 166, 1, 0, 0, 0, 166, 167, 5, 9, 0,
-		0, 167, 232, 1, 0, 0, 0, 168, 170, 5, 10, 0, 0, 169, 171, 5, 28, 0, 0,
-		170, 169, 1, 0, 0, 0, 170, 171, 1, 0, 0, 0, 171, 172, 1, 0, 0, 0, 172,
-		174, 3, 22, 11, 0, 173, 175, 5, 28, 0, 0, 174, 173, 1, 0, 0, 0, 174, 175,
-		1, 0, 0, 0, 175, 176, 1, 0, 0, 0, 176, 177, 5, 11, 0, 0, 177, 232, 1, 0,
-		0, 0, 178, 180, 5, 12, 0, 0, 179, 181, 5, 28, 0, 0, 180, 179, 1, 0, 0,
-		0, 180, 181, 1, 0, 0, 0, 181, 182, 1, 0, 0, 0, 182, 184, 3, 22, 11, 0,
-		183, 185, 5, 28, 0, 0, 184, 183, 1, 0, 0, 0, 184, 185, 1, 0, 0, 0, 185,
-		186, 1, 0, 0, 0, 186, 187, 5, 13, 0, 0, 187, 232, 1, 0, 0, 0, 188, 190,
-		5, 14, 0, 0, 189, 191, 5, 28, 0, 0, 190, 189, 1, 0, 0, 0, 190, 191, 1,
-		0, 0, 0, 191, 192, 1, 0, 0, 0, 192, 194, 5, 27, 0, 0, 193, 195, 3, 14,
-		7, 0, 194, 193, 1, 0, 0, 0, 194, 195, 1, 0, 0, 0, 195, 232, 1, 0, 0, 0,
-		196, 198, 5, 15, 0, 0, 197, 199, 5, 28, 0, 0, 198, 197, 1, 0, 0, 0, 198,
-		199, 1, 0, 0, 0, 199, 200, 1, 0, 0, 0, 200, 202, 5, 8, 0, 0, 201, 203,
-		5, 28, 0, 0, 202, 201, 1, 0, 0, 0, 202, 203, 1, 0, 0, 0, 203, 204, 1, 0,
-		0, 0, 204, 206, 3, 22, 11, 0, 205, 207, 5, 28, 0, 0, 206, 205, 1, 0, 0,
-		0, 206, 207, 1, 0, 0, 0, 207, 208, 1, 0, 0, 0, 208, 209, 5, 9, 0, 0, 209,
-		232, 1, 0, 0, 0, 210, 212, 5, 15, 0, 0, 211, 213, 5, 28, 0, 0, 212, 211,
-		1, 0, 0, 0, 212, 213, 1, 0, 0, 0, 213, 214, 1, 0, 0, 0, 214, 216, 5, 27,
-		0, 0, 215, 217, 3, 14, 7, 0, 216, 215, 1, 0, 0, 0, 216, 217, 1, 0, 0, 0,
-		217, 232, 1, 0, 0, 0, 218, 219, 5, 21, 0, 0, 219, 221, 5, 8, 0, 0, 220,
-		222, 5, 28, 0, 0, 221, 220, 1, 0, 0, 0, 221, 222, 1, 0, 0, 0, 222, 223,
-		1, 0, 0, 0, 223, 225, 3, 16, 8, 0, 224, 226, 5, 28, 0, 0, 225, 224, 1,
-		0, 0, 0, 225, 226, 1, 0, 0, 0, 226, 227, 1, 0, 0, 0, 227, 228, 5, 9, 0,
-		0, 228, 232, 1, 0, 0, 0, 229, 232, 5, 22, 0, 0, 230, 232, 5, 16, 0, 0,
-		231, 153, 1, 0, 0, 0, 231, 154, 1, 0, 0, 0, 231, 158, 1, 0, 0, 0, 231,
-		168, 1, 0, 0, 0, 231, 178, 1, 0, 0, 0, 231, 188, 1, 0, 0, 0, 231, 196,
-		1, 0, 0, 0, 231, 210, 1, 0, 0, 0, 231, 218, 1, 0, 0, 0, 231, 229, 1, 0,
-		0, 0, 231, 230, 1, 0, 0, 0, 232, 21, 1, 0, 0, 0, 233, 244, 3, 24, 12, 0,
-		234, 236, 5, 28, 0, 0, 235, 234, 1, 0, 0, 0, 235, 236, 1, 0, 0, 0, 236,
-		237, 1, 0, 0, 0, 237, 239, 5, 17, 0, 0, 238, 240, 5, 28, 0, 0, 239, 238,
-		1, 0, 0, 0, 239, 240, 1, 0, 0, 0, 240, 241, 1, 0, 0, 0, 241, 243, 3, 24,
-		12, 0, 242, 235, 1, 0, 0, 0, 243, 246, 1, 0, 0, 0, 244, 242, 1, 0, 0, 0,
-		244, 245, 1, 0, 0, 0, 245, 23, 1, 0, 0, 0, 246, 244, 1, 0, 0, 0, 247, 248,
-		3, 26, 13, 0, 248, 249, 3, 30, 15, 0, 249, 251, 1, 0, 0, 0, 250, 247, 1,
-		0, 0, 0, 251, 254, 1, 0, 0, 0, 252, 250, 1, 0, 0, 0, 252, 253, 1, 0, 0,
-		0, 253, 25, 1, 0, 0, 0, 254, 252, 1, 0, 0, 0, 255, 257, 5, 25, 0, 0, 256,
-		255, 1, 0, 0, 0, 256, 257, 1, 0, 0, 0, 257, 259, 1, 0, 0, 0, 258, 260,
-		5, 28, 0, 0, 259, 258, 1, 0, 0, 0, 259, 260, 1, 0, 0, 0, 260, 262, 1, 0,
-		0, 0, 261, 263, 3, 28, 14, 0, 262, 261, 1, 0, 0, 0, 262, 263, 1, 0, 0,
-		0, 263, 265, 1, 0, 0, 0, 264, 266, 5, 28, 0, 0, 265, 264, 1, 0, 0, 0, 265,
-		266, 1, 0, 0, 0, 266, 267, 1, 0, 0, 0, 267, 295, 3, 16, 8, 0, 268, 270,
-		5, 25, 0, 0, 269, 268, 1, 0, 0, 0, 269, 270, 1, 0, 0, 0, 270, 272, 1, 0,
-		0, 0, 271, 273, 5, 28, 0, 0, 272, 271, 1, 0, 0, 0, 272, 273, 1, 0, 0, 0,
-		273, 274, 1, 0, 0, 0, 274, 276, 5, 27, 0, 0, 275, 277, 3, 14, 7, 0, 276,
-		275, 1, 0, 0, 0, 276, 277, 1, 0, 0, 0, 277, 295, 1, 0, 0, 0, 278, 280,
-		5, 25, 0, 0, 279, 278, 1, 0, 0, 0, 279, 280, 1, 0, 0, 0, 280, 282, 1, 0,
-		0, 0, 281, 283, 5, 28, 0, 0, 282, 281, 1, 0, 0, 0, 282, 283, 1, 0, 0, 0,
-		283, 284, 1, 0, 0, 0, 284, 286, 5, 8, 0, 0, 285, 287, 5, 28, 0, 0, 286,
-		285, 1, 0, 0, 0, 286, 287, 1, 0, 0, 0, 287, 288, 1, 0, 0, 0, 288, 290,
-		3, 22, 11, 0, 289, 291, 5, 28, 0, 0, 290, 289, 1, 0, 0, 0, 290, 291, 1,
-		0, 0, 0, 291, 292, 1, 0, 0, 0, 292, 293, 5, 9, 0, 0, 293, 295, 1, 0, 0,
-		0, 294, 256, 1, 0, 0, 0, 294, 269, 1, 0, 0, 0, 294, 279, 1, 0, 0, 0, 295,
-		27, 1, 0, 0, 0, 296, 298, 3, 18, 9, 0, 297, 299, 5, 28, 0, 0, 298, 297,
-		1, 0, 0, 0, 298, 299, 1, 0, 0, 0, 299, 301, 1, 0, 0, 0, 300, 302, 5, 18,
-		0, 0, 301, 300, 1, 0, 0, 0, 301, 302, 1, 0, 0, 0, 302, 304, 1, 0, 0, 0,
-		303, 305, 5, 28, 0, 0, 304, 303, 1, 0, 0, 0, 304, 305, 1, 0, 0, 0, 305,
-		306, 1, 0, 0, 0, 306, 307, 5, 19, 0, 0, 307, 319, 1, 0, 0, 0, 308, 310,
-		5, 27, 0, 0, 309, 311, 5, 28, 0, 0, 310, 309, 1, 0, 0, 0, 310, 311, 1,
-		0, 0, 0, 311, 312, 1, 0, 0, 0, 312, 319, 5, 20, 0, 0, 313, 315, 5, 26,
-		0, 0, 314, 316, 5, 28, 0, 0, 315, 314, 1, 0, 0, 0, 315, 316, 1, 0, 0, 0,
-		316, 317, 1, 0, 0, 0, 317, 319, 5, 20, 0, 0, 318, 296, 1, 0, 0, 0, 318,
-		308, 1, 0, 0, 0, 318, 313, 1, 0, 0, 0, 319, 29, 1, 0, 0, 0, 320, 322, 5,
-		28, 0, 0, 321, 320, 1, 0, 0, 0, 321, 322, 1, 0, 0, 0, 322, 324, 1, 0, 0,
-		0, 323, 325, 5, 5, 0, 0, 324, 323, 1, 0, 0, 0, 324, 325, 1, 0, 0, 0, 325,
-		327, 1, 0, 0, 0, 326, 328, 5, 28, 0, 0, 327, 326, 1, 0, 0, 0, 327, 328,
-		1, 0, 0, 0, 328, 31, 1, 0, 0, 0, 69, 33, 37, 41, 44, 50, 54, 57, 61, 67,
-		70, 74, 84, 88, 92, 96, 100, 107, 111, 115, 119, 123, 130, 134, 139, 144,
-		148, 151, 156, 160, 164, 170, 174, 180, 184, 190, 194, 198, 202, 206, 212,
-		216, 221, 225, 231, 235, 239, 244, 252, 256, 259, 262, 265, 269, 272, 276,
-		279, 282, 286, 290, 294, 298, 301, 304, 310, 315, 318, 321, 324, 327,
+		10, 2, 11, 7, 11, 2, 12, 7, 12, 2, 13, 7, 13, 1, 0, 3, 0, 30, 8, 0, 1,
+		0, 1, 0, 3, 0, 34, 8, 0, 4, 0, 36, 8, 0, 11, 0, 12, 0, 37, 1, 0, 3, 0,
+		41, 8, 0, 1, 0, 1, 0, 1, 1, 1, 1, 3, 1, 47, 8, 1, 1, 1, 3, 1, 50, 8, 1,
+		1, 1, 1, 1, 3, 1, 54, 8, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 60, 8, 1, 1,
+		1, 3, 1, 63, 8, 1, 1, 1, 1, 1, 3, 1, 67, 8, 1, 1, 1, 1, 1, 3, 1, 71, 8,
+		1, 1, 2, 1, 2, 1, 3, 1, 3, 1, 4, 1, 4, 3, 4, 79, 8, 4, 1, 4, 1, 4, 3, 4,
+		83, 8, 4, 1, 4, 1, 4, 3, 4, 87, 8, 4, 1, 4, 1, 4, 3, 4, 91, 8, 4, 5, 4,
+		93, 8, 4, 10, 4, 12, 4, 96, 9, 4, 1, 4, 1, 4, 1, 5, 1, 5, 3, 5, 102, 8,
+		5, 1, 5, 1, 5, 3, 5, 106, 8, 5, 1, 5, 1, 5, 3, 5, 110, 8, 5, 1, 5, 1, 5,
+		3, 5, 114, 8, 5, 5, 5, 116, 8, 5, 10, 5, 12, 5, 119, 9, 5, 1, 5, 1, 5,
+		1, 6, 1, 6, 3, 6, 125, 8, 6, 1, 6, 1, 6, 3, 6, 129, 8, 6, 1, 6, 5, 6, 132,
+		8, 6, 10, 6, 12, 6, 135, 9, 6, 1, 7, 1, 7, 3, 7, 139, 8, 7, 1, 7, 1, 7,
+		3, 7, 143, 8, 7, 1, 7, 3, 7, 146, 8, 7, 1, 8, 1, 8, 1, 8, 3, 8, 151, 8,
+		8, 1, 8, 1, 8, 3, 8, 155, 8, 8, 1, 8, 1, 8, 3, 8, 159, 8, 8, 1, 8, 1, 8,
+		1, 8, 1, 8, 3, 8, 165, 8, 8, 1, 8, 1, 8, 3, 8, 169, 8, 8, 1, 8, 1, 8, 1,
+		8, 1, 8, 3, 8, 175, 8, 8, 1, 8, 1, 8, 3, 8, 179, 8, 8, 1, 8, 1, 8, 1, 8,
+		1, 8, 3, 8, 185, 8, 8, 1, 8, 1, 8, 3, 8, 189, 8, 8, 1, 8, 1, 8, 3, 8, 193,
+		8, 8, 1, 8, 1, 8, 3, 8, 197, 8, 8, 1, 8, 1, 8, 3, 8, 201, 8, 8, 1, 8, 1,
+		8, 1, 8, 1, 8, 3, 8, 207, 8, 8, 1, 8, 1, 8, 3, 8, 211, 8, 8, 1, 8, 1, 8,
+		1, 8, 3, 8, 216, 8, 8, 1, 8, 1, 8, 3, 8, 220, 8, 8, 1, 8, 1, 8, 1, 8, 1,
+		8, 3, 8, 226, 8, 8, 1, 9, 1, 9, 3, 9, 230, 8, 9, 1, 9, 1, 9, 3, 9, 234,
+		8, 9, 1, 9, 5, 9, 237, 8, 9, 10, 9, 12, 9, 240, 9, 9, 1, 10, 1, 10, 1,
+		10, 5, 10, 245, 8, 10, 10, 10, 12, 10, 248, 9, 10, 1, 11, 3, 11, 251, 8,
+		11, 1, 11, 3, 11, 254, 8, 11, 1, 11, 3, 11, 257, 8, 11, 1, 11, 3, 11, 260,
+		8, 11, 1, 11, 1, 11, 3, 11, 264, 8, 11, 1, 11, 3, 11, 267, 8, 11, 1, 11,
+		1, 11, 3, 11, 271, 8, 11, 1, 11, 3, 11, 274, 8, 11, 1, 11, 3, 11, 277,
+		8, 11, 1, 11, 1, 11, 3, 11, 281, 8, 11, 1, 11, 1, 11, 3, 11, 285, 8, 11,
+		1, 11, 1, 11, 3, 11, 289, 8, 11, 1, 12, 1, 12, 3, 12, 293, 8, 12, 1, 12,
+		3, 12, 296, 8, 12, 1, 12, 3, 12, 299, 8, 12, 1, 12, 1, 12, 1, 12, 1, 12,
+		3, 12, 305, 8, 12, 1, 12, 1, 12, 1, 12, 3, 12, 310, 8, 12, 1, 12, 3, 12,
+		313, 8, 12, 1, 13, 3, 13, 316, 8, 13, 1, 13, 3, 13, 319, 8, 13, 1, 13,
+		3, 13, 322, 8, 13, 1, 13, 0, 0, 14, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18,
+		20, 22, 24, 26, 0, 3, 1, 0, 1, 2, 2, 0, 1, 1, 3, 3, 1, 0, 23, 24, 389,
+		0, 29, 1, 0, 0, 0, 2, 70, 1, 0, 0, 0, 4, 72, 1, 0, 0, 0, 6, 74, 1, 0, 0,
+		0, 8, 76, 1, 0, 0, 0, 10, 99, 1, 0, 0, 0, 12, 122, 1, 0, 0, 0, 14, 136,
+		1, 0, 0, 0, 16, 225, 1, 0, 0, 0, 18, 227, 1, 0, 0, 0, 20, 246, 1, 0, 0,
+		0, 22, 288, 1, 0, 0, 0, 24, 312, 1, 0, 0, 0, 26, 315, 1, 0, 0, 0, 28, 30,
+		5, 28, 0, 0, 29, 28, 1, 0, 0, 0, 29, 30, 1, 0, 0, 0, 30, 35, 1, 0, 0, 0,
+		31, 33, 3, 2, 1, 0, 32, 34, 5, 28, 0, 0, 33, 32, 1, 0, 0, 0, 33, 34, 1,
+		0, 0, 0, 34, 36, 1, 0, 0, 0, 35, 31, 1, 0, 0, 0, 36, 37, 1, 0, 0, 0, 37,
+		35, 1, 0, 0, 0, 37, 38, 1, 0, 0, 0, 38, 40, 1, 0, 0, 0, 39, 41, 5, 28,
+		0, 0, 40, 39, 1, 0, 0, 0, 40, 41, 1, 0, 0, 0, 41, 42, 1, 0, 0, 0, 42, 43,
+		5, 0, 0, 1, 43, 1, 1, 0, 0, 0, 44, 46, 5, 27, 0, 0, 45, 47, 3, 8, 4, 0,
+		46, 45, 1, 0, 0, 0, 46, 47, 1, 0, 0, 0, 47, 49, 1, 0, 0, 0, 48, 50, 5,
+		28, 0, 0, 49, 48, 1, 0, 0, 0, 49, 50, 1, 0, 0, 0, 50, 51, 1, 0, 0, 0, 51,
+		53, 3, 4, 2, 0, 52, 54, 5, 28, 0, 0, 53, 52, 1, 0, 0, 0, 53, 54, 1, 0,
+		0, 0, 54, 55, 1, 0, 0, 0, 55, 56, 3, 12, 6, 0, 56, 71, 1, 0, 0, 0, 57,
+		59, 5, 27, 0, 0, 58, 60, 3, 8, 4, 0, 59, 58, 1, 0, 0, 0, 59, 60, 1, 0,
+		0, 0, 60, 62, 1, 0, 0, 0, 61, 63, 5, 28, 0, 0, 62, 61, 1, 0, 0, 0, 62,
+		63, 1, 0, 0, 0, 63, 64, 1, 0, 0, 0, 64, 66, 3, 6, 3, 0, 65, 67, 5, 28,
+		0, 0, 66, 65, 1, 0, 0, 0, 66, 67, 1, 0, 0, 0, 67, 68, 1, 0, 0, 0, 68, 69,
+		3, 22, 11, 0, 69, 71, 1, 0, 0, 0, 70, 44, 1, 0, 0, 0, 70, 57, 1, 0, 0,
+		0, 71, 3, 1, 0, 0, 0, 72, 73, 7, 0, 0, 0, 73, 5, 1, 0, 0, 0, 74, 75, 7,
+		1, 0, 0, 75, 7, 1, 0, 0, 0, 76, 78, 5, 4, 0, 0, 77, 79, 5, 28, 0, 0, 78,
+		77, 1, 0, 0, 0, 78, 79, 1, 0, 0, 0, 79, 80, 1, 0, 0, 0, 80, 82, 5, 27,
+		0, 0, 81, 83, 5, 28, 0, 0, 82, 81, 1, 0, 0, 0, 82, 83, 1, 0, 0, 0, 83,
+		94, 1, 0, 0, 0, 84, 86, 5, 5, 0, 0, 85, 87, 5, 28, 0, 0, 86, 85, 1, 0,
+		0, 0, 86, 87, 1, 0, 0, 0, 87, 88, 1, 0, 0, 0, 88, 90, 5, 27, 0, 0, 89,
+		91, 5, 28, 0, 0, 90, 89, 1, 0, 0, 0, 90, 91, 1, 0, 0, 0, 91, 93, 1, 0,
+		0, 0, 92, 84, 1, 0, 0, 0, 93, 96, 1, 0, 0, 0, 94, 92, 1, 0, 0, 0, 94, 95,
+		1, 0, 0, 0, 95, 97, 1, 0, 0, 0, 96, 94, 1, 0, 0, 0, 97, 98, 5, 6, 0, 0,
+		98, 9, 1, 0, 0, 0, 99, 101, 5, 4, 0, 0, 100, 102, 5, 28, 0, 0, 101, 100,
+		1, 0, 0, 0, 101, 102, 1, 0, 0, 0, 102, 103, 1, 0, 0, 0, 103, 105, 3, 14,
+		7, 0, 104, 106, 5, 28, 0, 0, 105, 104, 1, 0, 0, 0, 105, 106, 1, 0, 0, 0,
+		106, 117, 1, 0, 0, 0, 107, 109, 5, 5, 0, 0, 108, 110, 5, 28, 0, 0, 109,
+		108, 1, 0, 0, 0, 109, 110, 1, 0, 0, 0, 110, 111, 1, 0, 0, 0, 111, 113,
+		3, 14, 7, 0, 112, 114, 5, 28, 0, 0, 113, 112, 1, 0, 0, 0, 113, 114, 1,
+		0, 0, 0, 114, 116, 1, 0, 0, 0, 115, 107, 1, 0, 0, 0, 116, 119, 1, 0, 0,
+		0, 117, 115, 1, 0, 0, 0, 117, 118, 1, 0, 0, 0, 118, 120, 1, 0, 0, 0, 119,
+		117, 1, 0, 0, 0, 120, 121, 5, 6, 0, 0, 121, 11, 1, 0, 0, 0, 122, 133, 3,
+		14, 7, 0, 123, 125, 5, 28, 0, 0, 124, 123, 1, 0, 0, 0, 124, 125, 1, 0,
+		0, 0, 125, 126, 1, 0, 0, 0, 126, 128, 5, 7, 0, 0, 127, 129, 5, 28, 0, 0,
+		128, 127, 1, 0, 0, 0, 128, 129, 1, 0, 0, 0, 129, 130, 1, 0, 0, 0, 130,
+		132, 3, 14, 7, 0, 131, 124, 1, 0, 0, 0, 132, 135, 1, 0, 0, 0, 133, 131,
+		1, 0, 0, 0, 133, 134, 1, 0, 0, 0, 134, 13, 1, 0, 0, 0, 135, 133, 1, 0,
+		0, 0, 136, 145, 3, 16, 8, 0, 137, 139, 5, 28, 0, 0, 138, 137, 1, 0, 0,
+		0, 138, 139, 1, 0, 0, 0, 139, 140, 1, 0, 0, 0, 140, 142, 7, 2, 0, 0, 141,
+		143, 5, 28, 0, 0, 142, 141, 1, 0, 0, 0, 142, 143, 1, 0, 0, 0, 143, 144,
+		1, 0, 0, 0, 144, 146, 3, 16, 8, 0, 145, 138, 1, 0, 0, 0, 145, 146, 1, 0,
+		0, 0, 146, 15, 1, 0, 0, 0, 147, 226, 5, 26, 0, 0, 148, 150, 5, 27, 0, 0,
+		149, 151, 3, 10, 5, 0, 150, 149, 1, 0, 0, 0, 150, 151, 1, 0, 0, 0, 151,
+		226, 1, 0, 0, 0, 152, 154, 5, 8, 0, 0, 153, 155, 5, 28, 0, 0, 154, 153,
+		1, 0, 0, 0, 154, 155, 1, 0, 0, 0, 155, 156, 1, 0, 0, 0, 156, 158, 3, 12,
+		6, 0, 157, 159, 5, 28, 0, 0, 158, 157, 1, 0, 0, 0, 158, 159, 1, 0, 0, 0,
+		159, 160, 1, 0, 0, 0, 160, 161, 5, 9, 0, 0, 161, 226, 1, 0, 0, 0, 162,
+		164, 5, 10, 0, 0, 163, 165, 5, 28, 0, 0, 164, 163, 1, 0, 0, 0, 164, 165,
+		1, 0, 0, 0, 165, 166, 1, 0, 0, 0, 166, 168, 3, 18, 9, 0, 167, 169, 5, 28,
+		0, 0, 168, 167, 1, 0, 0, 0, 168, 169, 1, 0, 0, 0, 169, 170, 1, 0, 0, 0,
+		170, 171, 5, 11, 0, 0, 171, 226, 1, 0, 0, 0, 172, 174, 5, 12, 0, 0, 173,
+		175, 5, 28, 0, 0, 174, 173, 1, 0, 0, 0, 174, 175, 1, 0, 0, 0, 175, 176,
+		1, 0, 0, 0, 176, 178, 3, 18, 9, 0, 177, 179, 5, 28, 0, 0, 178, 177, 1,
+		0, 0, 0, 178, 179, 1, 0, 0, 0, 179, 180, 1, 0, 0, 0, 180, 181, 5, 13, 0,
+		0, 181, 226, 1, 0, 0, 0, 182, 184, 5, 14, 0, 0, 183, 185, 5, 28, 0, 0,
+		184, 183, 1, 0, 0, 0, 184, 185, 1, 0, 0, 0, 185, 186, 1, 0, 0, 0, 186,
+		188, 5, 27, 0, 0, 187, 189, 3, 10, 5, 0, 188, 187, 1, 0, 0, 0, 188, 189,
+		1, 0, 0, 0, 189, 226, 1, 0, 0, 0, 190, 192, 5, 15, 0, 0, 191, 193, 5, 28,
+		0, 0, 192, 191, 1, 0, 0, 0, 192, 193, 1, 0, 0, 0, 193, 194, 1, 0, 0, 0,
+		194, 196, 5, 8, 0, 0, 195, 197, 5, 28, 0, 0, 196, 195, 1, 0, 0, 0, 196,
+		197, 1, 0, 0, 0, 197, 198, 1, 0, 0, 0, 198, 200, 3, 18, 9, 0, 199, 201,
+		5, 28, 0, 0, 200, 199, 1, 0, 0, 0, 200, 201, 1, 0, 0, 0, 201, 202, 1, 0,
+		0, 0, 202, 203, 5, 9, 0, 0, 203, 226, 1, 0, 0, 0, 204, 206, 5, 15, 0, 0,
+		205, 207, 5, 28, 0, 0, 206, 205, 1, 0, 0, 0, 206, 207, 1, 0, 0, 0, 207,
+		208, 1, 0, 0, 0, 208, 210, 5, 27, 0, 0, 209, 211, 3, 10, 5, 0, 210, 209,
+		1, 0, 0, 0, 210, 211, 1, 0, 0, 0, 211, 226, 1, 0, 0, 0, 212, 213, 5, 21,
+		0, 0, 213, 215, 5, 8, 0, 0, 214, 216, 5, 28, 0, 0, 215, 214, 1, 0, 0, 0,
+		215, 216, 1, 0, 0, 0, 216, 217, 1, 0, 0, 0, 217, 219, 3, 12, 6, 0, 218,
+		220, 5, 28, 0, 0, 219, 218, 1, 0, 0, 0, 219, 220, 1, 0, 0, 0, 220, 221,
+		1, 0, 0, 0, 221, 222, 5, 9, 0, 0, 222, 226, 1, 0, 0, 0, 223, 226, 5, 22,
+		0, 0, 224, 226, 5, 16, 0, 0, 225, 147, 1, 0, 0, 0, 225, 148, 1, 0, 0, 0,
+		225, 152, 1, 0, 0, 0, 225, 162, 1, 0, 0, 0, 225, 172, 1, 0, 0, 0, 225,
+		182, 1, 0, 0, 0, 225, 190, 1, 0, 0, 0, 225, 204, 1, 0, 0, 0, 225, 212,
+		1, 0, 0, 0, 225, 223, 1, 0, 0, 0, 225, 224, 1, 0, 0, 0, 226, 17, 1, 0,
+		0, 0, 227, 238, 3, 20, 10, 0, 228, 230, 5, 28, 0, 0, 229, 228, 1, 0, 0,
+		0, 229, 230, 1, 0, 0, 0, 230, 231, 1, 0, 0, 0, 231, 233, 5, 17, 0, 0, 232,
+		234, 5, 28, 0, 0, 233, 232, 1, 0, 0, 0, 233, 234, 1, 0, 0, 0, 234, 235,
+		1, 0, 0, 0, 235, 237, 3, 20, 10, 0, 236, 229, 1, 0, 0, 0, 237, 240, 1,
+		0, 0, 0, 238, 236, 1, 0, 0, 0, 238, 239, 1, 0, 0, 0, 239, 19, 1, 0, 0,
+		0, 240, 238, 1, 0, 0, 0, 241, 242, 3, 22, 11, 0, 242, 243, 3, 26, 13, 0,
+		243, 245, 1, 0, 0, 0, 244, 241, 1, 0, 0, 0, 245, 248, 1, 0, 0, 0, 246,
+		244, 1, 0, 0, 0, 246, 247, 1, 0, 0, 0, 247, 21, 1, 0, 0, 0, 248, 246, 1,
+		0, 0, 0, 249, 251, 5, 25, 0, 0, 250, 249, 1, 0, 0, 0, 250, 251, 1, 0, 0,
+		0, 251, 253, 1, 0, 0, 0, 252, 254, 5, 28, 0, 0, 253, 252, 1, 0, 0, 0, 253,
+		254, 1, 0, 0, 0, 254, 256, 1, 0, 0, 0, 255, 257, 3, 24, 12, 0, 256, 255,
+		1, 0, 0, 0, 256, 257, 1, 0, 0, 0, 257, 259, 1, 0, 0, 0, 258, 260, 5, 28,
+		0, 0, 259, 258, 1, 0, 0, 0, 259, 260, 1, 0, 0, 0, 260, 261, 1, 0, 0, 0,
+		261, 289, 3, 12, 6, 0, 262, 264, 5, 25, 0, 0, 263, 262, 1, 0, 0, 0, 263,
+		264, 1, 0, 0, 0, 264, 266, 1, 0, 0, 0, 265, 267, 5, 28, 0, 0, 266, 265,
+		1, 0, 0, 0, 266, 267, 1, 0, 0, 0, 267, 268, 1, 0, 0, 0, 268, 270, 5, 27,
+		0, 0, 269, 271, 3, 10, 5, 0, 270, 269, 1, 0, 0, 0, 270, 271, 1, 0, 0, 0,
+		271, 289, 1, 0, 0, 0, 272, 274, 5, 25, 0, 0, 273, 272, 1, 0, 0, 0, 273,
+		274, 1, 0, 0, 0, 274, 276, 1, 0, 0, 0, 275, 277, 5, 28, 0, 0, 276, 275,
+		1, 0, 0, 0, 276, 277, 1, 0, 0, 0, 277, 278, 1, 0, 0, 0, 278, 280, 5, 8,
+		0, 0, 279, 281, 5, 28, 0, 0, 280, 279, 1, 0, 0, 0, 280, 281, 1, 0, 0, 0,
+		281, 282, 1, 0, 0, 0, 282, 284, 3, 18, 9, 0, 283, 285, 5, 28, 0, 0, 284,
+		283, 1, 0, 0, 0, 284, 285, 1, 0, 0, 0, 285, 286, 1, 0, 0, 0, 286, 287,
+		5, 9, 0, 0, 287, 289, 1, 0, 0, 0, 288, 250, 1, 0, 0, 0, 288, 263, 1, 0,
+		0, 0, 288, 273, 1, 0, 0, 0, 289, 23, 1, 0, 0, 0, 290, 292, 3, 14, 7, 0,
+		291, 293, 5, 28, 0, 0, 292, 291, 1, 0, 0, 0, 292, 293, 1, 0, 0, 0, 293,
+		295, 1, 0, 0, 0, 294, 296, 5, 18, 0, 0, 295, 294, 1, 0, 0, 0, 295, 296,
+		1, 0, 0, 0, 296, 298, 1, 0, 0, 0, 297, 299, 5, 28, 0, 0, 298, 297, 1, 0,
+		0, 0, 298, 299, 1, 0, 0, 0, 299, 300, 1, 0, 0, 0, 300, 301, 5, 19, 0, 0,
+		301, 313, 1, 0, 0, 0, 302, 304, 5, 27, 0, 0, 303, 305, 5, 28, 0, 0, 304,
+		303, 1, 0, 0, 0, 304, 305, 1, 0, 0, 0, 305, 306, 1, 0, 0, 0, 306, 313,
+		5, 20, 0, 0, 307, 309, 5, 26, 0, 0, 308, 310, 5, 28, 0, 0, 309, 308, 1,
+		0, 0, 0, 309, 310, 1, 0, 0, 0, 310, 311, 1, 0, 0, 0, 311, 313, 5, 20, 0,
+		0, 312, 290, 1, 0, 0, 0, 312, 302, 1, 0, 0, 0, 312, 307, 1, 0, 0, 0, 313,
+		25, 1, 0, 0, 0, 314, 316, 5, 28, 0, 0, 315, 314, 1, 0, 0, 0, 315, 316,
+		1, 0, 0, 0, 316, 318, 1, 0, 0, 0, 317, 319, 5, 5, 0, 0, 318, 317, 1, 0,
+		0, 0, 318, 319, 1, 0, 0, 0, 319, 321, 1, 0, 0, 0, 320, 322, 5, 28, 0, 0,
+		321, 320, 1, 0, 0, 0, 321, 322, 1, 0, 0, 0, 322, 27, 1, 0, 0, 0, 69, 29,
+		33, 37, 40, 46, 49, 53, 59, 62, 66, 70, 78, 82, 86, 90, 94, 101, 105, 109,
+		113, 117, 124, 128, 133, 138, 142, 145, 150, 154, 158, 164, 168, 174, 178,
+		184, 188, 192, 196, 200, 206, 210, 215, 219, 225, 229, 233, 238, 246, 250,
+		253, 256, 259, 263, 266, 270, 273, 276, 280, 284, 288, 292, 295, 298, 304,
+		309, 312, 315, 318, 321,
 	}
 	deserializer := antlr.NewATNDeserializer(nil)
 	staticData.atn = deserializer.Deserialize(staticData.serializedATN)
@@ -280,20 +277,18 @@ const (
 const (
 	CDDLParserRULE_cddl         = 0
 	CDDLParserRULE_rule         = 1
-	CDDLParserRULE_typeRule     = 2
-	CDDLParserRULE_groupRule    = 3
-	CDDLParserRULE_assignType   = 4
-	CDDLParserRULE_assignGroup  = 5
-	CDDLParserRULE_genericParam = 6
-	CDDLParserRULE_genericArg   = 7
-	CDDLParserRULE_type         = 8
-	CDDLParserRULE_type1        = 9
-	CDDLParserRULE_type2        = 10
-	CDDLParserRULE_groups       = 11
-	CDDLParserRULE_groupChoice  = 12
-	CDDLParserRULE_groupEntry   = 13
-	CDDLParserRULE_memberKey    = 14
-	CDDLParserRULE_optComma     = 15
+	CDDLParserRULE_assignType   = 2
+	CDDLParserRULE_assignGroup  = 3
+	CDDLParserRULE_genericParam = 4
+	CDDLParserRULE_genericArg   = 5
+	CDDLParserRULE_type         = 6
+	CDDLParserRULE_type1        = 7
+	CDDLParserRULE_type2        = 8
+	CDDLParserRULE_group        = 9
+	CDDLParserRULE_groupChoice  = 10
+	CDDLParserRULE_groupEntry   = 11
+	CDDLParserRULE_memberKey    = 12
+	CDDLParserRULE_optComma     = 13
 )
 
 // ICddlContext is an interface to support dynamic dispatch.
@@ -303,6 +298,18 @@ type ICddlContext interface {
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
+	// Get_rule returns the _rule rule contexts.
+	Get_rule() IRuleContext
+
+	// Set_rule sets the _rule rule contexts.
+	Set_rule(IRuleContext)
+
+	// GetRules returns the rules rule context list.
+	GetRules() []IRuleContext
+
+	// SetRules sets the rules rule context list.
+	SetRules([]IRuleContext)
+
 	// IsCddlContext differentiates from other interfaces.
 	IsCddlContext()
 }
@@ -310,6 +317,8 @@ type ICddlContext interface {
 type CddlContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
+	_rule  IRuleContext
+	rules  []IRuleContext
 }
 
 func NewEmptyCddlContext() *CddlContext {
@@ -333,6 +342,14 @@ func NewCddlContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokin
 }
 
 func (s *CddlContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *CddlContext) Get_rule() IRuleContext { return s._rule }
+
+func (s *CddlContext) Set_rule(v IRuleContext) { s._rule = v }
+
+func (s *CddlContext) GetRules() []IRuleContext { return s.rules }
+
+func (s *CddlContext) SetRules(v []IRuleContext) { s.rules = v }
 
 func (s *CddlContext) EOF() antlr.TerminalNode {
 	return s.GetToken(CDDLParserEOF, 0)
@@ -395,6 +412,16 @@ func (s *CddlContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) s
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
+func (s *CddlContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitCddl(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *CDDLParser) Cddl() (localctx ICddlContext) {
 	this := p
 	_ = this
@@ -420,54 +447,58 @@ func (p *CDDLParser) Cddl() (localctx ICddlContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(33)
+	p.SetState(29)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == CDDLParserS {
 		{
-			p.SetState(32)
+			p.SetState(28)
 			p.Match(CDDLParserS)
 		}
 
 	}
-	p.SetState(39)
+	p.SetState(35)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for ok := true; ok; ok = _la == CDDLParserID {
 		{
-			p.SetState(35)
-			p.Rule_()
+			p.SetState(31)
+
+			var _x = p.Rule_()
+
+			localctx.(*CddlContext)._rule = _x
 		}
-		p.SetState(37)
+		localctx.(*CddlContext).rules = append(localctx.(*CddlContext).rules, localctx.(*CddlContext)._rule)
+		p.SetState(33)
 		p.GetErrorHandler().Sync(p)
 
 		if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 1, p.GetParserRuleContext()) == 1 {
 			{
-				p.SetState(36)
+				p.SetState(32)
 				p.Match(CDDLParserS)
 			}
 
 		}
 
-		p.SetState(41)
+		p.SetState(37)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
-	p.SetState(44)
+	p.SetState(40)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == CDDLParserS {
 		{
-			p.SetState(43)
+			p.SetState(39)
 			p.Match(CDDLParserS)
 		}
 
 	}
 	{
-		p.SetState(46)
+		p.SetState(42)
 		p.Match(CDDLParserEOF)
 	}
 
@@ -512,36 +543,8 @@ func NewRuleContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokin
 
 func (s *RuleContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *RuleContext) TypeRule() ITypeRuleContext {
-	var t antlr.RuleContext
-	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(ITypeRuleContext); ok {
-			t = ctx.(antlr.RuleContext)
-			break
-		}
-	}
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(ITypeRuleContext)
-}
-
-func (s *RuleContext) GroupRule() IGroupRuleContext {
-	var t antlr.RuleContext
-	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IGroupRuleContext); ok {
-			t = ctx.(antlr.RuleContext)
-			break
-		}
-	}
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IGroupRuleContext)
+func (s *RuleContext) CopyFrom(ctx *RuleContext) {
+	s.BaseParserRuleContext.CopyFrom(ctx.BaseParserRuleContext)
 }
 
 func (s *RuleContext) GetRuleContext() antlr.RuleContext {
@@ -552,268 +555,23 @@ func (s *RuleContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) s
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (p *CDDLParser) Rule_() (localctx IRuleContext) {
-	this := p
-	_ = this
-
-	localctx = NewRuleContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 2, CDDLParserRULE_rule)
-
-	defer func() {
-		p.ExitRule()
-	}()
-
-	defer func() {
-		if err := recover(); err != nil {
-			if v, ok := err.(antlr.RecognitionException); ok {
-				localctx.SetException(v)
-				p.GetErrorHandler().ReportError(p, v)
-				p.GetErrorHandler().Recover(p, v)
-			} else {
-				panic(err)
-			}
-		}
-	}()
-
-	p.SetState(50)
-	p.GetErrorHandler().Sync(p)
-	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 4, p.GetParserRuleContext()) {
-	case 1:
-		p.EnterOuterAlt(localctx, 1)
-		{
-			p.SetState(48)
-			p.TypeRule()
-		}
-
-	case 2:
-		p.EnterOuterAlt(localctx, 2)
-		{
-			p.SetState(49)
-			p.GroupRule()
-		}
-
-	}
-
-	return localctx
+type GroupRuleContext struct {
+	*RuleContext
 }
 
-// ITypeRuleContext is an interface to support dynamic dispatch.
-type ITypeRuleContext interface {
-	antlr.ParserRuleContext
+func NewGroupRuleContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *GroupRuleContext {
+	var p = new(GroupRuleContext)
 
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// IsTypeRuleContext differentiates from other interfaces.
-	IsTypeRuleContext()
-}
-
-type TypeRuleContext struct {
-	*antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyTypeRuleContext() *TypeRuleContext {
-	var p = new(TypeRuleContext)
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = CDDLParserRULE_typeRule
-	return p
-}
-
-func (*TypeRuleContext) IsTypeRuleContext() {}
-
-func NewTypeRuleContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *TypeRuleContext {
-	var p = new(TypeRuleContext)
-
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
-
+	p.RuleContext = NewEmptyRuleContext()
 	p.parser = parser
-	p.RuleIndex = CDDLParserRULE_typeRule
+	p.CopyFrom(ctx.(*RuleContext))
 
 	return p
 }
 
-func (s *TypeRuleContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *TypeRuleContext) ID() antlr.TerminalNode {
-	return s.GetToken(CDDLParserID, 0)
-}
-
-func (s *TypeRuleContext) AssignType() IAssignTypeContext {
-	var t antlr.RuleContext
-	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IAssignTypeContext); ok {
-			t = ctx.(antlr.RuleContext)
-			break
-		}
-	}
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IAssignTypeContext)
-}
-
-func (s *TypeRuleContext) Type_() ITypeContext {
-	var t antlr.RuleContext
-	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(ITypeContext); ok {
-			t = ctx.(antlr.RuleContext)
-			break
-		}
-	}
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(ITypeContext)
-}
-
-func (s *TypeRuleContext) GenericParam() IGenericParamContext {
-	var t antlr.RuleContext
-	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IGenericParamContext); ok {
-			t = ctx.(antlr.RuleContext)
-			break
-		}
-	}
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IGenericParamContext)
-}
-
-func (s *TypeRuleContext) AllS() []antlr.TerminalNode {
-	return s.GetTokens(CDDLParserS)
-}
-
-func (s *TypeRuleContext) S(i int) antlr.TerminalNode {
-	return s.GetToken(CDDLParserS, i)
-}
-
-func (s *TypeRuleContext) GetRuleContext() antlr.RuleContext {
+func (s *GroupRuleContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
-
-func (s *TypeRuleContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (p *CDDLParser) TypeRule() (localctx ITypeRuleContext) {
-	this := p
-	_ = this
-
-	localctx = NewTypeRuleContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 4, CDDLParserRULE_typeRule)
-	var _la int
-
-	defer func() {
-		p.ExitRule()
-	}()
-
-	defer func() {
-		if err := recover(); err != nil {
-			if v, ok := err.(antlr.RecognitionException); ok {
-				localctx.SetException(v)
-				p.GetErrorHandler().ReportError(p, v)
-				p.GetErrorHandler().Recover(p, v)
-			} else {
-				panic(err)
-			}
-		}
-	}()
-
-	p.EnterOuterAlt(localctx, 1)
-	{
-		p.SetState(52)
-		p.Match(CDDLParserID)
-	}
-	p.SetState(54)
-	p.GetErrorHandler().Sync(p)
-	_la = p.GetTokenStream().LA(1)
-
-	if _la == CDDLParserT__3 {
-		{
-			p.SetState(53)
-			p.GenericParam()
-		}
-
-	}
-	p.SetState(57)
-	p.GetErrorHandler().Sync(p)
-	_la = p.GetTokenStream().LA(1)
-
-	if _la == CDDLParserS {
-		{
-			p.SetState(56)
-			p.Match(CDDLParserS)
-		}
-
-	}
-	{
-		p.SetState(59)
-		p.AssignType()
-	}
-	p.SetState(61)
-	p.GetErrorHandler().Sync(p)
-	_la = p.GetTokenStream().LA(1)
-
-	if _la == CDDLParserS {
-		{
-			p.SetState(60)
-			p.Match(CDDLParserS)
-		}
-
-	}
-	{
-		p.SetState(63)
-		p.Type_()
-	}
-
-	return localctx
-}
-
-// IGroupRuleContext is an interface to support dynamic dispatch.
-type IGroupRuleContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// IsGroupRuleContext differentiates from other interfaces.
-	IsGroupRuleContext()
-}
-
-type GroupRuleContext struct {
-	*antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptyGroupRuleContext() *GroupRuleContext {
-	var p = new(GroupRuleContext)
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = CDDLParserRULE_groupRule
-	return p
-}
-
-func (*GroupRuleContext) IsGroupRuleContext() {}
-
-func NewGroupRuleContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *GroupRuleContext {
-	var p = new(GroupRuleContext)
-
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = CDDLParserRULE_groupRule
-
-	return p
-}
-
-func (s *GroupRuleContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *GroupRuleContext) ID() antlr.TerminalNode {
 	return s.GetToken(CDDLParserID, 0)
@@ -875,20 +633,110 @@ func (s *GroupRuleContext) S(i int) antlr.TerminalNode {
 	return s.GetToken(CDDLParserS, i)
 }
 
-func (s *GroupRuleContext) GetRuleContext() antlr.RuleContext {
+func (s *GroupRuleContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitGroupRule(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+type TypeRuleContext struct {
+	*RuleContext
+}
+
+func NewTypeRuleContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *TypeRuleContext {
+	var p = new(TypeRuleContext)
+
+	p.RuleContext = NewEmptyRuleContext()
+	p.parser = parser
+	p.CopyFrom(ctx.(*RuleContext))
+
+	return p
+}
+
+func (s *TypeRuleContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *GroupRuleContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
+func (s *TypeRuleContext) ID() antlr.TerminalNode {
+	return s.GetToken(CDDLParserID, 0)
 }
 
-func (p *CDDLParser) GroupRule() (localctx IGroupRuleContext) {
+func (s *TypeRuleContext) AssignType() IAssignTypeContext {
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IAssignTypeContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IAssignTypeContext)
+}
+
+func (s *TypeRuleContext) Type_() ITypeContext {
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(ITypeContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(ITypeContext)
+}
+
+func (s *TypeRuleContext) GenericParam() IGenericParamContext {
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IGenericParamContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IGenericParamContext)
+}
+
+func (s *TypeRuleContext) AllS() []antlr.TerminalNode {
+	return s.GetTokens(CDDLParserS)
+}
+
+func (s *TypeRuleContext) S(i int) antlr.TerminalNode {
+	return s.GetToken(CDDLParserS, i)
+}
+
+func (s *TypeRuleContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitTypeRule(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *CDDLParser) Rule_() (localctx IRuleContext) {
 	this := p
 	_ = this
 
-	localctx = NewGroupRuleContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 6, CDDLParserRULE_groupRule)
+	localctx = NewRuleContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 2, CDDLParserRULE_rule)
 	var _la int
 
 	defer func() {
@@ -907,50 +755,106 @@ func (p *CDDLParser) GroupRule() (localctx IGroupRuleContext) {
 		}
 	}()
 
-	p.EnterOuterAlt(localctx, 1)
-	{
-		p.SetState(65)
-		p.Match(CDDLParserID)
-	}
-	p.SetState(67)
-	p.GetErrorHandler().Sync(p)
-	_la = p.GetTokenStream().LA(1)
-
-	if _la == CDDLParserT__3 {
-		{
-			p.SetState(66)
-			p.GenericParam()
-		}
-
-	}
 	p.SetState(70)
 	p.GetErrorHandler().Sync(p)
-	_la = p.GetTokenStream().LA(1)
-
-	if _la == CDDLParserS {
+	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 10, p.GetParserRuleContext()) {
+	case 1:
+		localctx = NewTypeRuleContext(p, localctx)
+		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(69)
-			p.Match(CDDLParserS)
+			p.SetState(44)
+			p.Match(CDDLParserID)
+		}
+		p.SetState(46)
+		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
+
+		if _la == CDDLParserT__3 {
+			{
+				p.SetState(45)
+				p.GenericParam()
+			}
+
+		}
+		p.SetState(49)
+		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
+
+		if _la == CDDLParserS {
+			{
+				p.SetState(48)
+				p.Match(CDDLParserS)
+			}
+
+		}
+		{
+			p.SetState(51)
+			p.AssignType()
+		}
+		p.SetState(53)
+		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
+
+		if _la == CDDLParserS {
+			{
+				p.SetState(52)
+				p.Match(CDDLParserS)
+			}
+
+		}
+		{
+			p.SetState(55)
+			p.Type_()
 		}
 
-	}
-	{
-		p.SetState(72)
-		p.AssignGroup()
-	}
-	p.SetState(74)
-	p.GetErrorHandler().Sync(p)
-
-	if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 10, p.GetParserRuleContext()) == 1 {
+	case 2:
+		localctx = NewGroupRuleContext(p, localctx)
+		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(73)
-			p.Match(CDDLParserS)
+			p.SetState(57)
+			p.Match(CDDLParserID)
+		}
+		p.SetState(59)
+		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
+
+		if _la == CDDLParserT__3 {
+			{
+				p.SetState(58)
+				p.GenericParam()
+			}
+
+		}
+		p.SetState(62)
+		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
+
+		if _la == CDDLParserS {
+			{
+				p.SetState(61)
+				p.Match(CDDLParserS)
+			}
+
+		}
+		{
+			p.SetState(64)
+			p.AssignGroup()
+		}
+		p.SetState(66)
+		p.GetErrorHandler().Sync(p)
+
+		if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 9, p.GetParserRuleContext()) == 1 {
+			{
+				p.SetState(65)
+				p.Match(CDDLParserS)
+			}
+
+		}
+		{
+			p.SetState(68)
+			p.GroupEntry()
 		}
 
-	}
-	{
-		p.SetState(76)
-		p.GroupEntry()
 	}
 
 	return localctx
@@ -1001,12 +905,22 @@ func (s *AssignTypeContext) ToStringTree(ruleNames []string, recog antlr.Recogni
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
+func (s *AssignTypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitAssignType(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *CDDLParser) AssignType() (localctx IAssignTypeContext) {
 	this := p
 	_ = this
 
 	localctx = NewAssignTypeContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 8, CDDLParserRULE_assignType)
+	p.EnterRule(localctx, 4, CDDLParserRULE_assignType)
 	var _la int
 
 	defer func() {
@@ -1027,7 +941,7 @@ func (p *CDDLParser) AssignType() (localctx IAssignTypeContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(78)
+		p.SetState(72)
 		_la = p.GetTokenStream().LA(1)
 
 		if !(_la == CDDLParserT__0 || _la == CDDLParserT__1) {
@@ -1086,12 +1000,22 @@ func (s *AssignGroupContext) ToStringTree(ruleNames []string, recog antlr.Recogn
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
+func (s *AssignGroupContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitAssignGroup(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *CDDLParser) AssignGroup() (localctx IAssignGroupContext) {
 	this := p
 	_ = this
 
 	localctx = NewAssignGroupContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 10, CDDLParserRULE_assignGroup)
+	p.EnterRule(localctx, 6, CDDLParserRULE_assignGroup)
 	var _la int
 
 	defer func() {
@@ -1112,7 +1036,7 @@ func (p *CDDLParser) AssignGroup() (localctx IAssignGroupContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(80)
+		p.SetState(74)
 		_la = p.GetTokenStream().LA(1)
 
 		if !(_la == CDDLParserT__0 || _la == CDDLParserT__2) {
@@ -1188,12 +1112,22 @@ func (s *GenericParamContext) ToStringTree(ruleNames []string, recog antlr.Recog
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
+func (s *GenericParamContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitGenericParam(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *CDDLParser) GenericParam() (localctx IGenericParamContext) {
 	this := p
 	_ = this
 
 	localctx = NewGenericParamContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 12, CDDLParserRULE_genericParam)
+	p.EnterRule(localctx, 8, CDDLParserRULE_genericParam)
 	var _la int
 
 	defer func() {
@@ -1214,77 +1148,77 @@ func (p *CDDLParser) GenericParam() (localctx IGenericParamContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(82)
+		p.SetState(76)
 		p.Match(CDDLParserT__3)
 	}
-	p.SetState(84)
+	p.SetState(78)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == CDDLParserS {
 		{
-			p.SetState(83)
+			p.SetState(77)
 			p.Match(CDDLParserS)
 		}
 
 	}
 	{
-		p.SetState(86)
+		p.SetState(80)
 		p.Match(CDDLParserID)
 	}
-	p.SetState(88)
+	p.SetState(82)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == CDDLParserS {
 		{
-			p.SetState(87)
+			p.SetState(81)
 			p.Match(CDDLParserS)
 		}
 
 	}
-	p.SetState(100)
+	p.SetState(94)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for _la == CDDLParserT__4 {
 		{
-			p.SetState(90)
+			p.SetState(84)
 			p.Match(CDDLParserT__4)
 		}
-		p.SetState(92)
+		p.SetState(86)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == CDDLParserS {
 			{
-				p.SetState(91)
+				p.SetState(85)
 				p.Match(CDDLParserS)
 			}
 
 		}
 		{
-			p.SetState(94)
+			p.SetState(88)
 			p.Match(CDDLParserID)
 		}
-		p.SetState(96)
+		p.SetState(90)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == CDDLParserS {
 			{
-				p.SetState(95)
+				p.SetState(89)
 				p.Match(CDDLParserS)
 			}
 
 		}
 
-		p.SetState(102)
+		p.SetState(96)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
 	{
-		p.SetState(103)
+		p.SetState(97)
 		p.Match(CDDLParserT__5)
 	}
 
@@ -1386,12 +1320,22 @@ func (s *GenericArgContext) ToStringTree(ruleNames []string, recog antlr.Recogni
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
+func (s *GenericArgContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitGenericArg(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *CDDLParser) GenericArg() (localctx IGenericArgContext) {
 	this := p
 	_ = this
 
 	localctx = NewGenericArgContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 14, CDDLParserRULE_genericArg)
+	p.EnterRule(localctx, 10, CDDLParserRULE_genericArg)
 	var _la int
 
 	defer func() {
@@ -1412,77 +1356,77 @@ func (p *CDDLParser) GenericArg() (localctx IGenericArgContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(105)
+		p.SetState(99)
 		p.Match(CDDLParserT__3)
 	}
-	p.SetState(107)
+	p.SetState(101)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == CDDLParserS {
 		{
-			p.SetState(106)
+			p.SetState(100)
 			p.Match(CDDLParserS)
 		}
 
 	}
 	{
-		p.SetState(109)
+		p.SetState(103)
 		p.Type1()
 	}
-	p.SetState(111)
+	p.SetState(105)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == CDDLParserS {
 		{
-			p.SetState(110)
+			p.SetState(104)
 			p.Match(CDDLParserS)
 		}
 
 	}
-	p.SetState(123)
+	p.SetState(117)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for _la == CDDLParserT__4 {
 		{
-			p.SetState(113)
+			p.SetState(107)
 			p.Match(CDDLParserT__4)
 		}
-		p.SetState(115)
+		p.SetState(109)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == CDDLParserS {
 			{
-				p.SetState(114)
+				p.SetState(108)
 				p.Match(CDDLParserS)
 			}
 
 		}
 		{
-			p.SetState(117)
+			p.SetState(111)
 			p.Type1()
 		}
-		p.SetState(119)
+		p.SetState(113)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == CDDLParserS {
 			{
-				p.SetState(118)
+				p.SetState(112)
 				p.Match(CDDLParserS)
 			}
 
 		}
 
-		p.SetState(125)
+		p.SetState(119)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
 	{
-		p.SetState(126)
+		p.SetState(120)
 		p.Match(CDDLParserT__5)
 	}
 
@@ -1496,6 +1440,18 @@ type ITypeContext interface {
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
+	// Get_type1 returns the _type1 rule contexts.
+	Get_type1() IType1Context
+
+	// Set_type1 sets the _type1 rule contexts.
+	Set_type1(IType1Context)
+
+	// GetTypes returns the types rule context list.
+	GetTypes() []IType1Context
+
+	// SetTypes sets the types rule context list.
+	SetTypes([]IType1Context)
+
 	// IsTypeContext differentiates from other interfaces.
 	IsTypeContext()
 }
@@ -1503,6 +1459,8 @@ type ITypeContext interface {
 type TypeContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
+	_type1 IType1Context
+	types  []IType1Context
 }
 
 func NewEmptyTypeContext() *TypeContext {
@@ -1526,6 +1484,14 @@ func NewTypeContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokin
 }
 
 func (s *TypeContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *TypeContext) Get_type1() IType1Context { return s._type1 }
+
+func (s *TypeContext) Set_type1(v IType1Context) { s._type1 = v }
+
+func (s *TypeContext) GetTypes() []IType1Context { return s.types }
+
+func (s *TypeContext) SetTypes(v []IType1Context) { s.types = v }
 
 func (s *TypeContext) AllType1() []IType1Context {
 	children := s.GetChildren()
@@ -1584,12 +1550,22 @@ func (s *TypeContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) s
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
+func (s *TypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitType(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *CDDLParser) Type_() (localctx ITypeContext) {
 	this := p
 	_ = this
 
 	localctx = NewTypeContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 16, CDDLParserRULE_type)
+	p.EnterRule(localctx, 12, CDDLParserRULE_type)
 	var _la int
 
 	defer func() {
@@ -1612,48 +1588,56 @@ func (p *CDDLParser) Type_() (localctx ITypeContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(128)
-		p.Type1()
+		p.SetState(122)
+
+		var _x = p.Type1()
+
+		localctx.(*TypeContext)._type1 = _x
 	}
-	p.SetState(139)
+	localctx.(*TypeContext).types = append(localctx.(*TypeContext).types, localctx.(*TypeContext)._type1)
+	p.SetState(133)
 	p.GetErrorHandler().Sync(p)
 	_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 23, p.GetParserRuleContext())
 
 	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
 		if _alt == 1 {
-			p.SetState(130)
+			p.SetState(124)
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 
 			if _la == CDDLParserS {
 				{
-					p.SetState(129)
+					p.SetState(123)
 					p.Match(CDDLParserS)
 				}
 
 			}
 			{
-				p.SetState(132)
+				p.SetState(126)
 				p.Match(CDDLParserT__6)
 			}
-			p.SetState(134)
+			p.SetState(128)
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 
 			if _la == CDDLParserS {
 				{
-					p.SetState(133)
+					p.SetState(127)
 					p.Match(CDDLParserS)
 				}
 
 			}
 			{
-				p.SetState(136)
-				p.Type1()
+				p.SetState(130)
+
+				var _x = p.Type1()
+
+				localctx.(*TypeContext)._type1 = _x
 			}
+			localctx.(*TypeContext).types = append(localctx.(*TypeContext).types, localctx.(*TypeContext)._type1)
 
 		}
-		p.SetState(141)
+		p.SetState(135)
 		p.GetErrorHandler().Sync(p)
 		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 23, p.GetParserRuleContext())
 	}
@@ -1764,12 +1748,22 @@ func (s *Type1Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) 
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
+func (s *Type1Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitType1(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *CDDLParser) Type1() (localctx IType1Context) {
 	this := p
 	_ = this
 
 	localctx = NewType1Context(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 18, CDDLParserRULE_type1)
+	p.EnterRule(localctx, 14, CDDLParserRULE_type1)
 	var _la int
 
 	defer func() {
@@ -1790,26 +1784,26 @@ func (p *CDDLParser) Type1() (localctx IType1Context) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(142)
+		p.SetState(136)
 		p.Type2()
 	}
-	p.SetState(151)
+	p.SetState(145)
 	p.GetErrorHandler().Sync(p)
 
 	if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 26, p.GetParserRuleContext()) == 1 {
-		p.SetState(144)
+		p.SetState(138)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == CDDLParserS {
 			{
-				p.SetState(143)
+				p.SetState(137)
 				p.Match(CDDLParserS)
 			}
 
 		}
 		{
-			p.SetState(146)
+			p.SetState(140)
 			_la = p.GetTokenStream().LA(1)
 
 			if !(_la == CDDLParserRANGEOP || _la == CDDLParserCTLOP) {
@@ -1819,19 +1813,19 @@ func (p *CDDLParser) Type1() (localctx IType1Context) {
 				p.Consume()
 			}
 		}
-		p.SetState(148)
+		p.SetState(142)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == CDDLParserS {
 			{
-				p.SetState(147)
+				p.SetState(141)
 				p.Match(CDDLParserS)
 			}
 
 		}
 		{
-			p.SetState(150)
+			p.SetState(144)
 			p.Type2()
 		}
 
@@ -1908,10 +1902,10 @@ func (s *MapExprContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *MapExprContext) Groups() IGroupsContext {
+func (s *MapExprContext) Group() IGroupContext {
 	var t antlr.RuleContext
 	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IGroupsContext); ok {
+		if _, ok := ctx.(IGroupContext); ok {
 			t = ctx.(antlr.RuleContext)
 			break
 		}
@@ -1921,7 +1915,7 @@ func (s *MapExprContext) Groups() IGroupsContext {
 		return nil
 	}
 
-	return t.(IGroupsContext)
+	return t.(IGroupContext)
 }
 
 func (s *MapExprContext) AllS() []antlr.TerminalNode {
@@ -1930,6 +1924,16 @@ func (s *MapExprContext) AllS() []antlr.TerminalNode {
 
 func (s *MapExprContext) S(i int) antlr.TerminalNode {
 	return s.GetToken(CDDLParserS, i)
+}
+
+func (s *MapExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitMapExpr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
 }
 
 type ChoiceExprContext struct {
@@ -1950,10 +1954,10 @@ func (s *ChoiceExprContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *ChoiceExprContext) Groups() IGroupsContext {
+func (s *ChoiceExprContext) Group() IGroupContext {
 	var t antlr.RuleContext
 	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IGroupsContext); ok {
+		if _, ok := ctx.(IGroupContext); ok {
 			t = ctx.(antlr.RuleContext)
 			break
 		}
@@ -1963,7 +1967,7 @@ func (s *ChoiceExprContext) Groups() IGroupsContext {
 		return nil
 	}
 
-	return t.(IGroupsContext)
+	return t.(IGroupContext)
 }
 
 func (s *ChoiceExprContext) AllS() []antlr.TerminalNode {
@@ -1972,6 +1976,16 @@ func (s *ChoiceExprContext) AllS() []antlr.TerminalNode {
 
 func (s *ChoiceExprContext) S(i int) antlr.TerminalNode {
 	return s.GetToken(CDDLParserS, i)
+}
+
+func (s *ChoiceExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitChoiceExpr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
 }
 
 type ValueExprContext struct {
@@ -1999,6 +2013,16 @@ func (s *ValueExprContext) GetRuleContext() antlr.RuleContext {
 
 func (s *ValueExprContext) VALUE() antlr.TerminalNode {
 	return s.GetToken(CDDLParserVALUE, 0)
+}
+
+func (s *ValueExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitValueExpr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
 }
 
 type GroupExprContext struct {
@@ -2043,6 +2067,16 @@ func (s *GroupExprContext) S(i int) antlr.TerminalNode {
 	return s.GetToken(CDDLParserS, i)
 }
 
+func (s *GroupExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitGroupExpr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 type ArrayExprContext struct {
 	*Type2Context
 }
@@ -2061,10 +2095,10 @@ func (s *ArrayExprContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *ArrayExprContext) Groups() IGroupsContext {
+func (s *ArrayExprContext) Group() IGroupContext {
 	var t antlr.RuleContext
 	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IGroupsContext); ok {
+		if _, ok := ctx.(IGroupContext); ok {
 			t = ctx.(antlr.RuleContext)
 			break
 		}
@@ -2074,7 +2108,7 @@ func (s *ArrayExprContext) Groups() IGroupsContext {
 		return nil
 	}
 
-	return t.(IGroupsContext)
+	return t.(IGroupContext)
 }
 
 func (s *ArrayExprContext) AllS() []antlr.TerminalNode {
@@ -2083,6 +2117,16 @@ func (s *ArrayExprContext) AllS() []antlr.TerminalNode {
 
 func (s *ArrayExprContext) S(i int) antlr.TerminalNode {
 	return s.GetToken(CDDLParserS, i)
+}
+
+func (s *ArrayExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitArrayExpr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
 }
 
 type MajorExprContext struct {
@@ -2110,6 +2154,16 @@ func (s *MajorExprContext) GetRuleContext() antlr.RuleContext {
 
 func (s *MajorExprContext) MAJOR() antlr.TerminalNode {
 	return s.GetToken(CDDLParserMAJOR, 0)
+}
+
+func (s *MajorExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitMajorExpr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
 }
 
 type IdExprContext struct {
@@ -2160,6 +2214,16 @@ func (s *IdExprContext) GenericArg() IGenericArgContext {
 	return t.(IGenericArgContext)
 }
 
+func (s *IdExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitIdExpr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 type AnyExprContext struct {
 	*Type2Context
 }
@@ -2176,6 +2240,16 @@ func NewAnyExprContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *AnyExp
 
 func (s *AnyExprContext) GetRuleContext() antlr.RuleContext {
 	return s
+}
+
+func (s *AnyExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitAnyExpr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
 }
 
 type UnwrapExprContext struct {
@@ -2230,6 +2304,16 @@ func (s *UnwrapExprContext) GenericArg() IGenericArgContext {
 	return t.(IGenericArgContext)
 }
 
+func (s *UnwrapExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitUnwrapExpr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 type ChoiceIDExprContext struct {
 	*Type2Context
 	id  antlr.Token
@@ -2280,6 +2364,16 @@ func (s *ChoiceIDExprContext) GenericArg() IGenericArgContext {
 	}
 
 	return t.(IGenericArgContext)
+}
+
+func (s *ChoiceIDExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitChoiceIDExpr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
 }
 
 type TaggedExprContext struct {
@@ -2333,12 +2427,22 @@ func (s *TaggedExprContext) S(i int) antlr.TerminalNode {
 	return s.GetToken(CDDLParserS, i)
 }
 
+func (s *TaggedExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitTaggedExpr(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *CDDLParser) Type2() (localctx IType2Context) {
 	this := p
 	_ = this
 
 	localctx = NewType2Context(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 20, CDDLParserRULE_type2)
+	p.EnterRule(localctx, 16, CDDLParserRULE_type2)
 	var _la int
 
 	defer func() {
@@ -2357,14 +2461,14 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 		}
 	}()
 
-	p.SetState(231)
+	p.SetState(225)
 	p.GetErrorHandler().Sync(p)
 	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 43, p.GetParserRuleContext()) {
 	case 1:
 		localctx = NewValueExprContext(p, localctx)
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(153)
+			p.SetState(147)
 
 			var _m = p.Match(CDDLParserVALUE)
 
@@ -2375,19 +2479,19 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 		localctx = NewIdExprContext(p, localctx)
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(154)
+			p.SetState(148)
 
 			var _m = p.Match(CDDLParserID)
 
 			localctx.(*IdExprContext).id = _m
 		}
-		p.SetState(156)
+		p.SetState(150)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == CDDLParserT__3 {
 			{
-				p.SetState(155)
+				p.SetState(149)
 
 				var _x = p.GenericArg()
 
@@ -2400,29 +2504,51 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 		localctx = NewGroupExprContext(p, localctx)
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(158)
+			p.SetState(152)
 			p.Match(CDDLParserT__7)
 		}
-		p.SetState(160)
+		p.SetState(154)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == CDDLParserS {
 			{
-				p.SetState(159)
+				p.SetState(153)
 				p.Match(CDDLParserS)
 			}
 
 		}
 		{
-			p.SetState(162)
+			p.SetState(156)
 			p.Type_()
 		}
-		p.SetState(164)
+		p.SetState(158)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == CDDLParserS {
+			{
+				p.SetState(157)
+				p.Match(CDDLParserS)
+			}
+
+		}
+		{
+			p.SetState(160)
+			p.Match(CDDLParserT__8)
+		}
+
+	case 4:
+		localctx = NewMapExprContext(p, localctx)
+		p.EnterOuterAlt(localctx, 4)
+		{
+			p.SetState(162)
+			p.Match(CDDLParserT__9)
+		}
+		p.SetState(164)
+		p.GetErrorHandler().Sync(p)
+
+		if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 30, p.GetParserRuleContext()) == 1 {
 			{
 				p.SetState(163)
 				p.Match(CDDLParserS)
@@ -2431,35 +2557,35 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 		}
 		{
 			p.SetState(166)
-			p.Match(CDDLParserT__8)
+			p.Group()
 		}
-
-	case 4:
-		localctx = NewMapExprContext(p, localctx)
-		p.EnterOuterAlt(localctx, 4)
-		{
-			p.SetState(168)
-			p.Match(CDDLParserT__9)
-		}
-		p.SetState(170)
+		p.SetState(168)
 		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
 
-		if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 30, p.GetParserRuleContext()) == 1 {
+		if _la == CDDLParserS {
 			{
-				p.SetState(169)
+				p.SetState(167)
 				p.Match(CDDLParserS)
 			}
 
 		}
 		{
+			p.SetState(170)
+			p.Match(CDDLParserT__10)
+		}
+
+	case 5:
+		localctx = NewArrayExprContext(p, localctx)
+		p.EnterOuterAlt(localctx, 5)
+		{
 			p.SetState(172)
-			p.Groups()
+			p.Match(CDDLParserT__11)
 		}
 		p.SetState(174)
 		p.GetErrorHandler().Sync(p)
-		_la = p.GetTokenStream().LA(1)
 
-		if _la == CDDLParserS {
+		if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 32, p.GetParserRuleContext()) == 1 {
 			{
 				p.SetState(173)
 				p.Match(CDDLParserS)
@@ -2468,29 +2594,30 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 		}
 		{
 			p.SetState(176)
-			p.Match(CDDLParserT__10)
+			p.Group()
 		}
-
-	case 5:
-		localctx = NewArrayExprContext(p, localctx)
-		p.EnterOuterAlt(localctx, 5)
-		{
-			p.SetState(178)
-			p.Match(CDDLParserT__11)
-		}
-		p.SetState(180)
+		p.SetState(178)
 		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
 
-		if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 32, p.GetParserRuleContext()) == 1 {
+		if _la == CDDLParserS {
 			{
-				p.SetState(179)
+				p.SetState(177)
 				p.Match(CDDLParserS)
 			}
 
 		}
 		{
+			p.SetState(180)
+			p.Match(CDDLParserT__12)
+		}
+
+	case 6:
+		localctx = NewUnwrapExprContext(p, localctx)
+		p.EnterOuterAlt(localctx, 6)
+		{
 			p.SetState(182)
-			p.Groups()
+			p.Match(CDDLParserT__13)
 		}
 		p.SetState(184)
 		p.GetErrorHandler().Sync(p)
@@ -2505,41 +2632,18 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 		}
 		{
 			p.SetState(186)
-			p.Match(CDDLParserT__12)
-		}
-
-	case 6:
-		localctx = NewUnwrapExprContext(p, localctx)
-		p.EnterOuterAlt(localctx, 6)
-		{
-			p.SetState(188)
-			p.Match(CDDLParserT__13)
-		}
-		p.SetState(190)
-		p.GetErrorHandler().Sync(p)
-		_la = p.GetTokenStream().LA(1)
-
-		if _la == CDDLParserS {
-			{
-				p.SetState(189)
-				p.Match(CDDLParserS)
-			}
-
-		}
-		{
-			p.SetState(192)
 
 			var _m = p.Match(CDDLParserID)
 
 			localctx.(*UnwrapExprContext).id = _m
 		}
-		p.SetState(194)
+		p.SetState(188)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == CDDLParserT__3 {
 			{
-				p.SetState(193)
+				p.SetState(187)
 
 				var _x = p.GenericArg()
 
@@ -2552,37 +2656,60 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 		localctx = NewChoiceExprContext(p, localctx)
 		p.EnterOuterAlt(localctx, 7)
 		{
-			p.SetState(196)
+			p.SetState(190)
 			p.Match(CDDLParserT__14)
 		}
-		p.SetState(198)
+		p.SetState(192)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == CDDLParserS {
 			{
-				p.SetState(197)
+				p.SetState(191)
 				p.Match(CDDLParserS)
 			}
 
 		}
 		{
-			p.SetState(200)
+			p.SetState(194)
 			p.Match(CDDLParserT__7)
 		}
-		p.SetState(202)
+		p.SetState(196)
 		p.GetErrorHandler().Sync(p)
 
 		if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 37, p.GetParserRuleContext()) == 1 {
 			{
-				p.SetState(201)
+				p.SetState(195)
 				p.Match(CDDLParserS)
 			}
 
 		}
 		{
+			p.SetState(198)
+			p.Group()
+		}
+		p.SetState(200)
+		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
+
+		if _la == CDDLParserS {
+			{
+				p.SetState(199)
+				p.Match(CDDLParserS)
+			}
+
+		}
+		{
+			p.SetState(202)
+			p.Match(CDDLParserT__8)
+		}
+
+	case 8:
+		localctx = NewChoiceIDExprContext(p, localctx)
+		p.EnterOuterAlt(localctx, 8)
+		{
 			p.SetState(204)
-			p.Groups()
+			p.Match(CDDLParserT__14)
 		}
 		p.SetState(206)
 		p.GetErrorHandler().Sync(p)
@@ -2597,41 +2724,18 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 		}
 		{
 			p.SetState(208)
-			p.Match(CDDLParserT__8)
-		}
-
-	case 8:
-		localctx = NewChoiceIDExprContext(p, localctx)
-		p.EnterOuterAlt(localctx, 8)
-		{
-			p.SetState(210)
-			p.Match(CDDLParserT__14)
-		}
-		p.SetState(212)
-		p.GetErrorHandler().Sync(p)
-		_la = p.GetTokenStream().LA(1)
-
-		if _la == CDDLParserS {
-			{
-				p.SetState(211)
-				p.Match(CDDLParserS)
-			}
-
-		}
-		{
-			p.SetState(214)
 
 			var _m = p.Match(CDDLParserID)
 
 			localctx.(*ChoiceIDExprContext).id = _m
 		}
-		p.SetState(216)
+		p.SetState(210)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == CDDLParserT__3 {
 			{
-				p.SetState(215)
+				p.SetState(209)
 
 				var _x = p.GenericArg()
 
@@ -2644,44 +2748,44 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 		localctx = NewTaggedExprContext(p, localctx)
 		p.EnterOuterAlt(localctx, 9)
 		{
-			p.SetState(218)
+			p.SetState(212)
 
 			var _m = p.Match(CDDLParserTAG)
 
 			localctx.(*TaggedExprContext).tag = _m
 		}
 		{
-			p.SetState(219)
+			p.SetState(213)
 			p.Match(CDDLParserT__7)
 		}
-		p.SetState(221)
+		p.SetState(215)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == CDDLParserS {
 			{
-				p.SetState(220)
+				p.SetState(214)
 				p.Match(CDDLParserS)
 			}
 
 		}
 		{
-			p.SetState(223)
+			p.SetState(217)
 			p.Type_()
 		}
-		p.SetState(225)
+		p.SetState(219)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == CDDLParserS {
 			{
-				p.SetState(224)
+				p.SetState(218)
 				p.Match(CDDLParserS)
 			}
 
 		}
 		{
-			p.SetState(227)
+			p.SetState(221)
 			p.Match(CDDLParserT__8)
 		}
 
@@ -2689,7 +2793,7 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 		localctx = NewMajorExprContext(p, localctx)
 		p.EnterOuterAlt(localctx, 10)
 		{
-			p.SetState(229)
+			p.SetState(223)
 
 			var _m = p.Match(CDDLParserMAJOR)
 
@@ -2700,7 +2804,7 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 		localctx = NewAnyExprContext(p, localctx)
 		p.EnterOuterAlt(localctx, 11)
 		{
-			p.SetState(230)
+			p.SetState(224)
 			p.Match(CDDLParserT__15)
 		}
 
@@ -2709,45 +2813,67 @@ func (p *CDDLParser) Type2() (localctx IType2Context) {
 	return localctx
 }
 
-// IGroupsContext is an interface to support dynamic dispatch.
-type IGroupsContext interface {
+// IGroupContext is an interface to support dynamic dispatch.
+type IGroupContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsGroupsContext differentiates from other interfaces.
-	IsGroupsContext()
+	// Get_groupChoice returns the _groupChoice rule contexts.
+	Get_groupChoice() IGroupChoiceContext
+
+	// Set_groupChoice sets the _groupChoice rule contexts.
+	Set_groupChoice(IGroupChoiceContext)
+
+	// GetGroups returns the groups rule context list.
+	GetGroups() []IGroupChoiceContext
+
+	// SetGroups sets the groups rule context list.
+	SetGroups([]IGroupChoiceContext)
+
+	// IsGroupContext differentiates from other interfaces.
+	IsGroupContext()
 }
 
-type GroupsContext struct {
+type GroupContext struct {
 	*antlr.BaseParserRuleContext
-	parser antlr.Parser
+	parser       antlr.Parser
+	_groupChoice IGroupChoiceContext
+	groups       []IGroupChoiceContext
 }
 
-func NewEmptyGroupsContext() *GroupsContext {
-	var p = new(GroupsContext)
+func NewEmptyGroupContext() *GroupContext {
+	var p = new(GroupContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = CDDLParserRULE_groups
+	p.RuleIndex = CDDLParserRULE_group
 	return p
 }
 
-func (*GroupsContext) IsGroupsContext() {}
+func (*GroupContext) IsGroupContext() {}
 
-func NewGroupsContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *GroupsContext {
-	var p = new(GroupsContext)
+func NewGroupContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *GroupContext {
+	var p = new(GroupContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = CDDLParserRULE_groups
+	p.RuleIndex = CDDLParserRULE_group
 
 	return p
 }
 
-func (s *GroupsContext) GetParser() antlr.Parser { return s.parser }
+func (s *GroupContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *GroupsContext) AllGroupChoice() []IGroupChoiceContext {
+func (s *GroupContext) Get_groupChoice() IGroupChoiceContext { return s._groupChoice }
+
+func (s *GroupContext) Set_groupChoice(v IGroupChoiceContext) { s._groupChoice = v }
+
+func (s *GroupContext) GetGroups() []IGroupChoiceContext { return s.groups }
+
+func (s *GroupContext) SetGroups(v []IGroupChoiceContext) { s.groups = v }
+
+func (s *GroupContext) AllGroupChoice() []IGroupChoiceContext {
 	children := s.GetChildren()
 	len := 0
 	for _, ctx := range children {
@@ -2768,7 +2894,7 @@ func (s *GroupsContext) AllGroupChoice() []IGroupChoiceContext {
 	return tst
 }
 
-func (s *GroupsContext) GroupChoice(i int) IGroupChoiceContext {
+func (s *GroupContext) GroupChoice(i int) IGroupChoiceContext {
 	var t antlr.RuleContext
 	j := 0
 	for _, ctx := range s.GetChildren() {
@@ -2788,28 +2914,38 @@ func (s *GroupsContext) GroupChoice(i int) IGroupChoiceContext {
 	return t.(IGroupChoiceContext)
 }
 
-func (s *GroupsContext) AllS() []antlr.TerminalNode {
+func (s *GroupContext) AllS() []antlr.TerminalNode {
 	return s.GetTokens(CDDLParserS)
 }
 
-func (s *GroupsContext) S(i int) antlr.TerminalNode {
+func (s *GroupContext) S(i int) antlr.TerminalNode {
 	return s.GetToken(CDDLParserS, i)
 }
 
-func (s *GroupsContext) GetRuleContext() antlr.RuleContext {
+func (s *GroupContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *GroupsContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *GroupContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (p *CDDLParser) Groups() (localctx IGroupsContext) {
+func (s *GroupContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitGroup(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *CDDLParser) Group() (localctx IGroupContext) {
 	this := p
 	_ = this
 
-	localctx = NewGroupsContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 22, CDDLParserRULE_groups)
+	localctx = NewGroupContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 18, CDDLParserRULE_group)
 	var _la int
 
 	defer func() {
@@ -2832,47 +2968,55 @@ func (p *CDDLParser) Groups() (localctx IGroupsContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(233)
-		p.GroupChoice()
+		p.SetState(227)
+
+		var _x = p.GroupChoice()
+
+		localctx.(*GroupContext)._groupChoice = _x
 	}
-	p.SetState(244)
+	localctx.(*GroupContext).groups = append(localctx.(*GroupContext).groups, localctx.(*GroupContext)._groupChoice)
+	p.SetState(238)
 	p.GetErrorHandler().Sync(p)
 	_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 46, p.GetParserRuleContext())
 
 	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
 		if _alt == 1 {
-			p.SetState(235)
+			p.SetState(229)
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 
 			if _la == CDDLParserS {
 				{
-					p.SetState(234)
+					p.SetState(228)
 					p.Match(CDDLParserS)
 				}
 
 			}
 			{
-				p.SetState(237)
+				p.SetState(231)
 				p.Match(CDDLParserT__16)
 			}
-			p.SetState(239)
+			p.SetState(233)
 			p.GetErrorHandler().Sync(p)
 
 			if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 45, p.GetParserRuleContext()) == 1 {
 				{
-					p.SetState(238)
+					p.SetState(232)
 					p.Match(CDDLParserS)
 				}
 
 			}
 			{
-				p.SetState(241)
-				p.GroupChoice()
+				p.SetState(235)
+
+				var _x = p.GroupChoice()
+
+				localctx.(*GroupContext)._groupChoice = _x
 			}
+			localctx.(*GroupContext).groups = append(localctx.(*GroupContext).groups, localctx.(*GroupContext)._groupChoice)
 
 		}
-		p.SetState(246)
+		p.SetState(240)
 		p.GetErrorHandler().Sync(p)
 		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 46, p.GetParserRuleContext())
 	}
@@ -2887,6 +3031,12 @@ type IGroupChoiceContext interface {
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
+	// GetEntry returns the entry rule contexts.
+	GetEntry() IGroupEntryContext
+
+	// SetEntry sets the entry rule contexts.
+	SetEntry(IGroupEntryContext)
+
 	// IsGroupChoiceContext differentiates from other interfaces.
 	IsGroupChoiceContext()
 }
@@ -2894,6 +3044,7 @@ type IGroupChoiceContext interface {
 type GroupChoiceContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
+	entry  IGroupEntryContext
 }
 
 func NewEmptyGroupChoiceContext() *GroupChoiceContext {
@@ -2918,46 +3069,9 @@ func NewGroupChoiceContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 
 func (s *GroupChoiceContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *GroupChoiceContext) AllGroupEntry() []IGroupEntryContext {
-	children := s.GetChildren()
-	len := 0
-	for _, ctx := range children {
-		if _, ok := ctx.(IGroupEntryContext); ok {
-			len++
-		}
-	}
+func (s *GroupChoiceContext) GetEntry() IGroupEntryContext { return s.entry }
 
-	tst := make([]IGroupEntryContext, len)
-	i := 0
-	for _, ctx := range children {
-		if t, ok := ctx.(IGroupEntryContext); ok {
-			tst[i] = t.(IGroupEntryContext)
-			i++
-		}
-	}
-
-	return tst
-}
-
-func (s *GroupChoiceContext) GroupEntry(i int) IGroupEntryContext {
-	var t antlr.RuleContext
-	j := 0
-	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IGroupEntryContext); ok {
-			if j == i {
-				t = ctx.(antlr.RuleContext)
-				break
-			}
-			j++
-		}
-	}
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IGroupEntryContext)
-}
+func (s *GroupChoiceContext) SetEntry(v IGroupEntryContext) { s.entry = v }
 
 func (s *GroupChoiceContext) AllOptComma() []IOptCommaContext {
 	children := s.GetChildren()
@@ -3000,6 +3114,47 @@ func (s *GroupChoiceContext) OptComma(i int) IOptCommaContext {
 	return t.(IOptCommaContext)
 }
 
+func (s *GroupChoiceContext) AllGroupEntry() []IGroupEntryContext {
+	children := s.GetChildren()
+	len := 0
+	for _, ctx := range children {
+		if _, ok := ctx.(IGroupEntryContext); ok {
+			len++
+		}
+	}
+
+	tst := make([]IGroupEntryContext, len)
+	i := 0
+	for _, ctx := range children {
+		if t, ok := ctx.(IGroupEntryContext); ok {
+			tst[i] = t.(IGroupEntryContext)
+			i++
+		}
+	}
+
+	return tst
+}
+
+func (s *GroupChoiceContext) GroupEntry(i int) IGroupEntryContext {
+	var t antlr.RuleContext
+	j := 0
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IGroupEntryContext); ok {
+			if j == i {
+				t = ctx.(antlr.RuleContext)
+				break
+			}
+			j++
+		}
+	}
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IGroupEntryContext)
+}
+
 func (s *GroupChoiceContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -3008,12 +3163,22 @@ func (s *GroupChoiceContext) ToStringTree(ruleNames []string, recog antlr.Recogn
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
+func (s *GroupChoiceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitGroupChoice(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *CDDLParser) GroupChoice() (localctx IGroupChoiceContext) {
 	this := p
 	_ = this
 
 	localctx = NewGroupChoiceContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 24, CDDLParserRULE_groupChoice)
+	p.EnterRule(localctx, 20, CDDLParserRULE_groupChoice)
 
 	defer func() {
 		p.ExitRule()
@@ -3034,23 +3199,26 @@ func (p *CDDLParser) GroupChoice() (localctx IGroupChoiceContext) {
 	var _alt int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(252)
+	p.SetState(246)
 	p.GetErrorHandler().Sync(p)
 	_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 47, p.GetParserRuleContext())
 
 	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
 		if _alt == 1 {
 			{
-				p.SetState(247)
-				p.GroupEntry()
+				p.SetState(241)
+
+				var _x = p.GroupEntry()
+
+				localctx.(*GroupChoiceContext).entry = _x
 			}
 			{
-				p.SetState(248)
+				p.SetState(242)
 				p.OptComma()
 			}
 
 		}
-		p.SetState(254)
+		p.SetState(248)
 		p.GetErrorHandler().Sync(p)
 		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 47, p.GetParserRuleContext())
 	}
@@ -3126,10 +3294,10 @@ func (s *GroupsEntryContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *GroupsEntryContext) Groups() IGroupsContext {
+func (s *GroupsEntryContext) Group() IGroupContext {
 	var t antlr.RuleContext
 	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IGroupsContext); ok {
+		if _, ok := ctx.(IGroupContext); ok {
 			t = ctx.(antlr.RuleContext)
 			break
 		}
@@ -3139,7 +3307,7 @@ func (s *GroupsEntryContext) Groups() IGroupsContext {
 		return nil
 	}
 
-	return t.(IGroupsContext)
+	return t.(IGroupContext)
 }
 
 func (s *GroupsEntryContext) OCCUR() antlr.TerminalNode {
@@ -3152,6 +3320,16 @@ func (s *GroupsEntryContext) AllS() []antlr.TerminalNode {
 
 func (s *GroupsEntryContext) S(i int) antlr.TerminalNode {
 	return s.GetToken(CDDLParserS, i)
+}
+
+func (s *GroupsEntryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitGroupsEntry(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
 }
 
 type NameEntryContext struct {
@@ -3208,6 +3386,16 @@ func (s *NameEntryContext) GenericArg() IGenericArgContext {
 	}
 
 	return t.(IGenericArgContext)
+}
+
+func (s *NameEntryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitNameEntry(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
 }
 
 type TypeEntryContext struct {
@@ -3272,12 +3460,22 @@ func (s *TypeEntryContext) MemberKey() IMemberKeyContext {
 	return t.(IMemberKeyContext)
 }
 
+func (s *TypeEntryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitTypeEntry(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *CDDLParser) GroupEntry() (localctx IGroupEntryContext) {
 	this := p
 	_ = this
 
 	localctx = NewGroupEntryContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 26, CDDLParserRULE_groupEntry)
+	p.EnterRule(localctx, 22, CDDLParserRULE_groupEntry)
 	var _la int
 
 	defer func() {
@@ -3296,98 +3494,98 @@ func (p *CDDLParser) GroupEntry() (localctx IGroupEntryContext) {
 		}
 	}()
 
-	p.SetState(294)
+	p.SetState(288)
 	p.GetErrorHandler().Sync(p)
 	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 59, p.GetParserRuleContext()) {
 	case 1:
 		localctx = NewTypeEntryContext(p, localctx)
 		p.EnterOuterAlt(localctx, 1)
-		p.SetState(256)
+		p.SetState(250)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == CDDLParserOCCUR {
 			{
-				p.SetState(255)
+				p.SetState(249)
 				p.Match(CDDLParserOCCUR)
+			}
+
+		}
+		p.SetState(253)
+		p.GetErrorHandler().Sync(p)
+
+		if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 49, p.GetParserRuleContext()) == 1 {
+			{
+				p.SetState(252)
+				p.Match(CDDLParserS)
+			}
+
+		}
+		p.SetState(256)
+		p.GetErrorHandler().Sync(p)
+
+		if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 50, p.GetParserRuleContext()) == 1 {
+			{
+				p.SetState(255)
+				p.MemberKey()
 			}
 
 		}
 		p.SetState(259)
 		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
 
-		if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 49, p.GetParserRuleContext()) == 1 {
+		if _la == CDDLParserS {
 			{
 				p.SetState(258)
 				p.Match(CDDLParserS)
 			}
 
 		}
-		p.SetState(262)
-		p.GetErrorHandler().Sync(p)
-
-		if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 50, p.GetParserRuleContext()) == 1 {
-			{
-				p.SetState(261)
-				p.MemberKey()
-			}
-
-		}
-		p.SetState(265)
-		p.GetErrorHandler().Sync(p)
-		_la = p.GetTokenStream().LA(1)
-
-		if _la == CDDLParserS {
-			{
-				p.SetState(264)
-				p.Match(CDDLParserS)
-			}
-
-		}
 		{
-			p.SetState(267)
+			p.SetState(261)
 			p.Type_()
 		}
 
 	case 2:
 		localctx = NewNameEntryContext(p, localctx)
 		p.EnterOuterAlt(localctx, 2)
-		p.SetState(269)
+		p.SetState(263)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == CDDLParserOCCUR {
 			{
-				p.SetState(268)
+				p.SetState(262)
 				p.Match(CDDLParserOCCUR)
 			}
 
 		}
-		p.SetState(272)
+		p.SetState(266)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == CDDLParserS {
 			{
-				p.SetState(271)
+				p.SetState(265)
 				p.Match(CDDLParserS)
 			}
 
 		}
 		{
-			p.SetState(274)
+			p.SetState(268)
 
 			var _m = p.Match(CDDLParserID)
 
 			localctx.(*NameEntryContext).id = _m
 		}
-		p.SetState(276)
+		p.SetState(270)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == CDDLParserT__3 {
 			{
-				p.SetState(275)
+				p.SetState(269)
 
 				var _x = p.GenericArg()
 
@@ -3399,59 +3597,59 @@ func (p *CDDLParser) GroupEntry() (localctx IGroupEntryContext) {
 	case 3:
 		localctx = NewGroupsEntryContext(p, localctx)
 		p.EnterOuterAlt(localctx, 3)
-		p.SetState(279)
+		p.SetState(273)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == CDDLParserOCCUR {
 			{
-				p.SetState(278)
+				p.SetState(272)
 				p.Match(CDDLParserOCCUR)
 			}
 
 		}
-		p.SetState(282)
+		p.SetState(276)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == CDDLParserS {
 			{
-				p.SetState(281)
+				p.SetState(275)
 				p.Match(CDDLParserS)
 			}
 
 		}
 		{
-			p.SetState(284)
+			p.SetState(278)
 			p.Match(CDDLParserT__7)
 		}
-		p.SetState(286)
+		p.SetState(280)
 		p.GetErrorHandler().Sync(p)
 
 		if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 57, p.GetParserRuleContext()) == 1 {
 			{
-				p.SetState(285)
+				p.SetState(279)
 				p.Match(CDDLParserS)
 			}
 
 		}
 		{
-			p.SetState(288)
-			p.Groups()
+			p.SetState(282)
+			p.Group()
 		}
-		p.SetState(290)
+		p.SetState(284)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == CDDLParserS {
 			{
-				p.SetState(289)
+				p.SetState(283)
 				p.Match(CDDLParserS)
 			}
 
 		}
 		{
-			p.SetState(292)
+			p.SetState(286)
 			p.Match(CDDLParserT__8)
 		}
 
@@ -3557,6 +3755,16 @@ func (s *TypeMemberContext) S(i int) antlr.TerminalNode {
 	return s.GetToken(CDDLParserS, i)
 }
 
+func (s *TypeMemberContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitTypeMember(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 type ValueMemberContext struct {
 	*MemberKeyContext
 	value antlr.Token
@@ -3586,6 +3794,16 @@ func (s *ValueMemberContext) VALUE() antlr.TerminalNode {
 
 func (s *ValueMemberContext) S() antlr.TerminalNode {
 	return s.GetToken(CDDLParserS, 0)
+}
+
+func (s *ValueMemberContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitValueMember(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
 }
 
 type NameMemberContext struct {
@@ -3619,12 +3837,22 @@ func (s *NameMemberContext) S() antlr.TerminalNode {
 	return s.GetToken(CDDLParserS, 0)
 }
 
+func (s *NameMemberContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitNameMember(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *CDDLParser) MemberKey() (localctx IMemberKeyContext) {
 	this := p
 	_ = this
 
 	localctx = NewMemberKeyContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 28, CDDLParserRULE_memberKey)
+	p.EnterRule(localctx, 24, CDDLParserRULE_memberKey)
 	var _la int
 
 	defer func() {
@@ -3643,39 +3871,65 @@ func (p *CDDLParser) MemberKey() (localctx IMemberKeyContext) {
 		}
 	}()
 
-	p.SetState(318)
+	p.SetState(312)
 	p.GetErrorHandler().Sync(p)
 	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 65, p.GetParserRuleContext()) {
 	case 1:
 		localctx = NewTypeMemberContext(p, localctx)
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(296)
+			p.SetState(290)
 			p.Type1()
 		}
-		p.SetState(298)
+		p.SetState(292)
 		p.GetErrorHandler().Sync(p)
 
 		if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 60, p.GetParserRuleContext()) == 1 {
 			{
-				p.SetState(297)
+				p.SetState(291)
 				p.Match(CDDLParserS)
 			}
 
 		}
-		p.SetState(301)
+		p.SetState(295)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == CDDLParserT__17 {
 			{
-				p.SetState(300)
+				p.SetState(294)
 
 				var _m = p.Match(CDDLParserT__17)
 
 				localctx.(*TypeMemberContext).cut = _m
 			}
 
+		}
+		p.SetState(298)
+		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
+
+		if _la == CDDLParserS {
+			{
+				p.SetState(297)
+				p.Match(CDDLParserS)
+			}
+
+		}
+		{
+			p.SetState(300)
+			p.Match(CDDLParserT__18)
+		}
+
+	case 2:
+		localctx = NewNameMemberContext(p, localctx)
+		p.EnterOuterAlt(localctx, 2)
+		{
+			p.SetState(302)
+
+			var _m = p.Match(CDDLParserID)
+
+			localctx.(*NameMemberContext).id = _m
 		}
 		p.SetState(304)
 		p.GetErrorHandler().Sync(p)
@@ -3690,32 +3944,6 @@ func (p *CDDLParser) MemberKey() (localctx IMemberKeyContext) {
 		}
 		{
 			p.SetState(306)
-			p.Match(CDDLParserT__18)
-		}
-
-	case 2:
-		localctx = NewNameMemberContext(p, localctx)
-		p.EnterOuterAlt(localctx, 2)
-		{
-			p.SetState(308)
-
-			var _m = p.Match(CDDLParserID)
-
-			localctx.(*NameMemberContext).id = _m
-		}
-		p.SetState(310)
-		p.GetErrorHandler().Sync(p)
-		_la = p.GetTokenStream().LA(1)
-
-		if _la == CDDLParserS {
-			{
-				p.SetState(309)
-				p.Match(CDDLParserS)
-			}
-
-		}
-		{
-			p.SetState(312)
 			p.Match(CDDLParserT__19)
 		}
 
@@ -3723,25 +3951,25 @@ func (p *CDDLParser) MemberKey() (localctx IMemberKeyContext) {
 		localctx = NewValueMemberContext(p, localctx)
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(313)
+			p.SetState(307)
 
 			var _m = p.Match(CDDLParserVALUE)
 
 			localctx.(*ValueMemberContext).value = _m
 		}
-		p.SetState(315)
+		p.SetState(309)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == CDDLParserS {
 			{
-				p.SetState(314)
+				p.SetState(308)
 				p.Match(CDDLParserS)
 			}
 
 		}
 		{
-			p.SetState(317)
+			p.SetState(311)
 			p.Match(CDDLParserT__19)
 		}
 
@@ -3804,12 +4032,22 @@ func (s *OptCommaContext) ToStringTree(ruleNames []string, recog antlr.Recognize
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
+func (s *OptCommaContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case CDDLVisitor:
+		return t.VisitOptComma(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *CDDLParser) OptComma() (localctx IOptCommaContext) {
 	this := p
 	_ = this
 
 	localctx = NewOptCommaContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 30, CDDLParserRULE_optComma)
+	p.EnterRule(localctx, 26, CDDLParserRULE_optComma)
 	var _la int
 
 	defer func() {
@@ -3829,33 +4067,33 @@ func (p *CDDLParser) OptComma() (localctx IOptCommaContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(321)
+	p.SetState(315)
 	p.GetErrorHandler().Sync(p)
 
 	if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 66, p.GetParserRuleContext()) == 1 {
 		{
-			p.SetState(320)
+			p.SetState(314)
 			p.Match(CDDLParserS)
 		}
 
 	}
-	p.SetState(324)
+	p.SetState(318)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == CDDLParserT__4 {
 		{
-			p.SetState(323)
+			p.SetState(317)
 			p.Match(CDDLParserT__4)
 		}
 
 	}
-	p.SetState(327)
+	p.SetState(321)
 	p.GetErrorHandler().Sync(p)
 
 	if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 68, p.GetParserRuleContext()) == 1 {
 		{
-			p.SetState(326)
+			p.SetState(320)
 			p.Match(CDDLParserS)
 		}
 

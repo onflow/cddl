@@ -1,14 +1,10 @@
 grammar CDDL;
 
-cddl : S? (rule S?)+ S? EOF;
+cddl : S? (rules+=rule S?)+ S? EOF;
 
-rule : typeRule
-     | groupRule
+rule : ID genericParam? S? assignType S? type           #TypeRule
+     | ID genericParam? S? assignGroup S? groupEntry    #GroupRule
      ;
-
-typeRule : ID genericParam? S? assignType S? type ;
-
-groupRule : ID genericParam? S? assignGroup S? groupEntry ;
 
 assignType : '=' | '/=' ;
 assignGroup : '=' | '//=' ;
@@ -16,7 +12,7 @@ assignGroup : '=' | '//=' ;
 genericParam : '<' S? ID S? (',' S? ID S? )* '>' ;
 genericArg : '<' S? type1 S? (',' S? type1 S? )* '>' ;
 
-type : type1 (S? '/' S? type1)* ;
+type : types+=type1 (S? '/' S? types+=type1)* ;
 
 type1 : type2 (S? (RANGEOP | CTLOP) S? type2)? ;
 /* space may be needed before the operator if type2 ends in a name */
@@ -24,10 +20,10 @@ type1 : type2 (S? (RANGEOP | CTLOP) S? type2)? ;
 type2 : value=VALUE                     #ValueExpr
       | id=ID arg=genericArg?           #IdExpr
       | '(' S? type S? ')'              #GroupExpr
-      | '{' S? groups S? '}'            #MapExpr
-      | '[' S? groups S? ']'            #ArrayExpr
+      | '{' S? group S? '}'             #MapExpr
+      | '[' S? group S? ']'             #ArrayExpr
       | '~' S? id=ID arg=genericArg?    #UnwrapExpr
-      | '&' S? '(' S? groups S? ')'     #ChoiceExpr
+      | '&' S? '(' S? group S? ')'      #ChoiceExpr
       | '&' S? id=ID arg=genericArg?    #ChoiceIDExpr
       | tag=TAG '(' S? type S? ')'      #TaggedExpr
       | major=MAJOR                     #MajorExpr
@@ -44,13 +40,13 @@ RANGEOP : '...'
 
 CTLOP : '.' ID ;
 
-groups : groupChoice (S? '//' S? groupChoice)* ;
+group : groups+=groupChoice (S? '//' S? groups+=groupChoice)* ;
 
-groupChoice : (groupEntry optComma)* ;
+groupChoice : (entry=groupEntry optComma)* ;
 
 groupEntry : OCCUR? S? memberKey? S? type                                 #TypeEntry
            | OCCUR? S? id=ID arg=genericArg?  /* preempted by above */    #NameEntry
-           | OCCUR? S? '(' S? groups S? ')'                               #GroupsEntry
+           | OCCUR? S? '(' S? group S? ')'                                #GroupsEntry
            ;
 
 memberKey : type1 S? cut='^'? S? '=>'    #TypeMember

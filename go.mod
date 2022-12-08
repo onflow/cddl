@@ -1,4 +1,4 @@
-module github.org/onflow/cddl_gen
+module github.org/onflow/cddl
 
 go 1.19
 
