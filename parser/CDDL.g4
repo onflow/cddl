@@ -2,34 +2,34 @@ grammar CDDL;
 
 // Implements RFC 8610, Appendix B. ABNF Grammar
 
-cddl : S? (rules+=rule S?)+ S? EOF;
+cddl : (rules+=rule)+ EOF;
 
-rule : ID genericParam? S? assignType S? type           #TypeRule
-     | ID genericParam? S? assignGroup S? groupEntry    #GroupRule
+rule : ID genericParam? assignType type           #TypeRule
+     | ID genericParam? assignGroup groupEntry    #GroupRule
      ;
 
 assignType : '=' | '/=' ;
 assignGroup : '=' | '//=' ;
 
-genericParam : '<' S? ID S? (',' S? ID S? )* '>' ;
-genericArg : '<' S? type1 S? (',' S? type1 S? )* '>' ;
+genericParam : '<' ids+=ID (',' ids+=ID )* '>' ;
+genericArg : '<' types+=type1 (',' types+=type1 )* '>' ;
 
-type : types+=type1 (S? '/' S? types+=type1)* ;
+type : types+=type1 ( '/' types+=type1)* ;
 
-type1 : type2 (S? (RANGEOP | CTLOP) S? type2)? ;
+type1 : type2 ( (RANGEOP | CTLOP) type2)? ;
 /* space may be needed before the operator if type2 ends in a name */
 
-type2 : value=VALUE                     #ValueExpr
-      | id=ID arg=genericArg?           #IdExpr
-      | '(' S? type S? ')'              #GroupExpr
-      | '{' S? group S? '}'             #MapExpr
-      | '[' S? group S? ']'             #ArrayExpr
-      | '~' S? id=ID arg=genericArg?    #UnwrapExpr
-      | '&' S? '(' S? group S? ')'      #ChoiceExpr
-      | '&' S? id=ID arg=genericArg?    #ChoiceIDExpr
-      | tag=TAG '(' S? type S? ')'      #TaggedExpr
-      | major=MAJOR                     #MajorExpr
-      | '#'                             #AnyExpr
+type2 : value=VALUE                  #ValueExpr
+      | id=ID arg=genericArg?        #IdExpr
+      | '(' type ')'                 #GroupExpr
+      | '{' group '}'                #MapExpr
+      | '[' group ']'                #ArrayExpr
+      | '~' id=ID arg=genericArg?    #UnwrapExpr
+      | '&' '(' group ')'            #ChoiceExpr
+      | '&' id=ID arg=genericArg?    #ChoiceIDExpr
+      | tag=TAG '(' type ')'         #TaggedExpr
+      | major=MAJOR                  #MajorExpr
+      | '#'                           #AnyExpr
       ;
 
 TAG : '#' '6' ('.' UINT)? ;
@@ -42,21 +42,21 @@ RANGEOP : '...'
 
 CTLOP : '.' ID ;
 
-group : groups+=groupChoice (S? '//' S? groups+=groupChoice)* ;
+group : groups+=groupChoice ( '//' groups+=groupChoice)* ;
 
 groupChoice : (entry=groupEntry optComma)* ;
 
-groupEntry : OCCUR? S? memberKey? S? type                                 #TypeEntry
-           | OCCUR? S? id=ID arg=genericArg?  /* preempted by above */    #NameEntry
-           | OCCUR? S? '(' S? group S? ')'                                #GroupsEntry
+groupEntry : OCCUR? memberKey? type                                    #TypeEntry
+           | OCCUR? id=ID arg=genericArg?  /* preempted by above */    #NameEntry
+           | OCCUR? '(' group ')'                                      #GroupsEntry
            ;
 
-memberKey : type1 S? cut='^'? S? '=>'    #TypeMember
-          | id=ID S? ':'                 #NameMember
-          | value=VALUE S? ':'           #ValueMember
+memberKey : type1 cut='^'? '=>'    #TypeMember
+          | id=ID ':'              #NameMember
+          | value=VALUE ':'        #ValueMember
           ;
 
-optComma : S? ','? S? ;
+optComma : ','? ;
 
 OCCUR : UINT? '*' UINT?
       | '+'
