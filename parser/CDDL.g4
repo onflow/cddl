@@ -1,5 +1,7 @@
 grammar CDDL;
 
+// Implements RFC 8610, Appendix B. ABNF Grammar
+
 cddl : S? (rules+=rule S?)+ S? EOF;
 
 rule : ID genericParam? S? assignType S? type           #TypeRule
